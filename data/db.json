@@ -1,0 +1,41 @@
+{
+    "projects":[
+        {
+            "id": 1,
+            "name": "Basic Tee",
+            "href": "https://github.com/maryaaama/weather-react-mui2.git",
+            "imageSrc": "img/WETHERAPP.jpg"
+            
+          },
+        {
+            "id": 2,
+            "name": "Basic Tee",
+            "href": "https://github.com/maryaaama/add-to-cart.git",
+            "imageSrc": "img/ADD.jpg"
+        },
+        {
+            "id": 3,
+            "name": "Basic Tee",
+            "href": "https://github.com/maryaaama/graphql-dashbord.git",
+            "imageSrc": "img/dashboardax.jpg"
+        },
+        {
+            "id": 4,
+            "name": "Basic Tee",
+            "href": "https://github.com/maryaaama/graphql-dashbord-typescript.git",
+            "imageSrc": "img/jobAX.jpg"
+        },
+        {
+            "id": 5,
+            "name": "Basic Tee",
+            "href": "https://github.com/maryaaama/shaply-maryaaam.git",
+            "imageSrc": "img/4.jpg"
+        },
+        {
+            "id": 6,
+            "name": "Basic Tee",
+            "href": "#",
+            "imageSrc": "img/4.jpg"
+        }
+    ]
+}
