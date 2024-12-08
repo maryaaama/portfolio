@@ -1,25 +1,23 @@
-
+const plugin = require('tailwindcss/plugin');
+const rtl = require('tailwindcss-rtl');
 /** @type {import('tailwindcss').Config} */
 module.exports = {
+  darkMode: 'class',
   content: [
     "./pages/**/*.{js,ts,jsx,tsx}",
     "./components/**/*.{js,ts,jsx,tsx}",
+    "./styles/**/*.{css}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        sans: ["Arial", "sans-serif"],
+      IRANRounded: ["IRAN Rounded", "sans-serif"],
+      },
+    },
   },
-  plugins: [],
+  plugins: [rtl,],
 };
-//const withMT = require("@material-tailwind/react/utils/withMT");
+/* @type {import('tailwindcss').Config} */
 
-//module.exports = withMT({
-  //content: [
-  //  "./pages/**/*.{js,ts,jsx,tsx}",
-  //  "./components/**/*.{js,ts,jsx,tsx}",
-  //  "./node_modules/@material-tailwind/react/**/*.{js,ts,jsx,tsx}"
-  //],
- // theme: {
-  //  extend: {},
- // },
-  //plugins: [],
-//});
+  //plugins: [require('tailwindcss-rtl')], // Pass the plugin directly

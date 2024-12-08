@@ -1,3 +1,26 @@
-@import 'tailwindcss/base';
-@import 'tailwindcss/components';
-@import 'tailwindcss/utilities';
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+html {
+  direction: ltr;
+  text-align: left;
+}
+
+html.rtl {
+  direction: rtl;
+  text-align: right;
+}
+
+html.ltr {
+  direction: ltr;
+  text-align: left;
+}
+
+@font-face {
+  font-family: "IRAN Rounded";
+  src: url("/fonts/IRANRounded/IRAN-Rounded.woff") format("woff"),
+    url("/fonts/IRANRounded/IRAN-Rounded.ttf") format("truetype"),
+    url("/fonts/IRANRounded/IRAN-Rounded.eot") format("embedded-opentype");
+  font-weight: normal;
+  font-style: normal;
+}

@@ -2,40 +2,42 @@
     "projects":[
         {
             "id": 1,
-            "name": "Basic Tee",
-            "href": "https://github.com/maryaaama/weather-react-mui2.git",
-            "imageSrc": "img/WETHERAPP.jpg"
+            "name": "Calculator",
+            "href": "https://maryaaama.github.io/calculator/",
+            "imageSrc": "img/calculator.jpg"
             
           },
         {
             "id": 2,
-            "name": "Basic Tee",
-            "href": "https://github.com/maryaaama/add-to-cart.git",
-            "imageSrc": "img/ADD.jpg"
+            "name": "Clock",
+            "href": "https://maryaaama.github.io/clock/",
+            "imageSrc": "img/clock.jpg"
         },
         {
             "id": 3,
-            "name": "Basic Tee",
-            "href": "https://github.com/maryaaama/graphql-dashbord.git",
+            "name": "Dashbord",
+            "href": "https://maryaaama.github.io/graphql-dashbord/",
             "imageSrc": "img/dashboardax.jpg"
         },
         {
             "id": 4,
-            "name": "Basic Tee",
-            "href": "https://github.com/maryaaama/graphql-dashbord-typescript.git",
-            "imageSrc": "img/jobAX.jpg"
-        },
+            "name": "random-quoter",
+            "href": "https://maryaaama.github.io/random-quote/",
+            "imageSrc": "img/quote.jpg"
+            
+          },
         {
             "id": 5,
-            "name": "Basic Tee",
-            "href": "https://github.com/maryaaama/shaply-maryaaam.git",
-            "imageSrc": "img/4.jpg"
+            "name": "Drum-Machine",
+            "href": "https://maryaaama.github.io/Drum-Machine/",
+            "imageSrc": "img/drum.jpg"
         },
         {
             "id": 6,
-            "name": "Basic Tee",
-            "href": "#",
-            "imageSrc": "img/4.jpg"
+            "name": "markdown-previewer",
+            "href": "https://maryaaama.github.io/markdown-previewer/",
+            "imageSrc": "img/markdown.jpg"
         }
+        
     ]
 }
