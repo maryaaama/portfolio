@@ -3,7 +3,6 @@ import Head from "next/head";
 import Image from "next/image";
 import LanguageSwitcher from "./components/LanguageSwitcher";
 import { Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/react';
-import { BeakerIcon } from '@heroicons/react/24/solid';
 import ProgressBar from './components/ProgressBar.js';
 import MyProject from './components/Myproject.js';
 import  db from '/data/db.json';
@@ -52,7 +51,11 @@ export default function Home() {
           <LanguageSwitcher/>
         <div className="sm:hidden">
         <Menu>
-           <MenuButton className='text-slate-600 dark:text-slate-100'><BeakerIcon className="h-5 w-5" /></MenuButton>
+           <MenuButton className='text-slate-600 dark:text-slate-100'>
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-6">
+               <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+           </svg>
+           </MenuButton>
            <MenuItems anchor="bottom" className="bg-white dark:bg-gray-900">
           {/* <MenuItem >
            <a className="block data-[focus]:bg-blue-100 dark:data-[focus]:bg-blue-700 rtl:text-left rtl:font-IRANRounded " href="/settings">
@@ -88,7 +91,7 @@ export default function Home() {
           </div>*/}
           <div className="mr-5">
             <a
-              href="experience"
+              href="#experience"
               className="flex items-center"
             >
               <h1 className="text-slate-600 rtl:text-left rtl:font-IRANRounded">{t('Experience')}</h1>
@@ -114,9 +117,9 @@ export default function Home() {
         </div>
         <div className="flex items-center justify-around w-full py-16 dark:bg-gray-900 dark:text-white rtl:text-right">
           <div className="flex flex-col items-start">
-            <h3 className="mb-3 text-3xl font-bold rtl:text-right rtl:font-IRANRounded">{t("I'm")}</h3>
-            <h1 className="text-7xl mb-3 font-bold rtl:text-right rtl:font-IRANRounded rtl:mb-6">{t("Maryam Alipour")}</h1>
-            <h2 className="text-4xl font-medium animate-pulse rtl:text-right rtl:font-IRANRounded ">{t("Front End Developer")}</h2>
+            <h3 className="mb-3 lg:text-3xl text-lg font-bold rtl:text-right rtl:font-IRANRounded">{t("I'm")}</h3>
+            <h1 className="lg:text-7xl text-3xl  mb-3 font-bold rtl:text-right rtl:font-IRANRounded rtl:mb-6">{t("Maryam Alipour")}</h1>
+            <h2 className="lg:text-4xl text-3xl font-medium animate-pulse rtl:text-right rtl:font-IRANRounded ">{t("Front End Developer")}</h2>
             <div className="flex mt-3">
               <a href="/Maryam Alipour_1403-9-5-1.pdf" 
                  target="_blank" 
@@ -206,7 +209,7 @@ export default function Home() {
           </div>
         </div>
       </div> */}
-      <div className="flex justify-around w-2/3 mt-10 mb-10">
+      <div className="flex flex-col lg:flex-row justify-around w-2/3 mt-10 mb-10">
         <div className=" basis-2/4 rtl:ml-10 ">
           <h1 id='experience' className="text-5xl mb-12 rtl:text-center rtl:font-IRANRounded">{t("Skills & Experience")}</h1>
           
@@ -324,11 +327,8 @@ export default function Home() {
           <p className='text-xl text-slate-500 mb-7 rtl:font-IRANRounded'>Follow me:</p>
           <div className='flex'>
            <div className='bg-[#eca348] rounded-full  w-12 h-12 flex justify-center items-center mr-2'>
-           <a href='#' target="_blank" rel="noopener noreferrer">
-           <svg xmlns="http://www.w3.org/2000/svg" width="42" height="41" viewBox="0 0 41 40" fill="none">
-            <rect x="0.109375" width="40.0208" height="40" rx="8" fill="none"/>
-           <path className='fill-[#286eb4]' d="M20.1266 12.8212C16.151 12.8212 12.9442 16.0263 12.9442 20C12.9442 23.9737 16.151 27.1788 20.1266 27.1788C24.1023 27.1788 27.3091 23.9737 27.3091 20C27.3091 16.0263 24.1023 12.8212 20.1266 12.8212ZM20.1266 24.6672C17.5575 24.6672 15.4571 22.5741 15.4571 20C15.4571 17.4259 17.5512 15.3328 20.1266 15.3328C22.7021 15.3328 24.7962 17.4259 24.7962 20C24.7962 22.5741 22.6958 24.6672 20.1266 24.6672ZM29.2782 12.5275C29.2782 13.4584 28.5281 14.2019 27.6029 14.2019C26.6715 14.2019 25.9277 13.4522 25.9277 12.5275C25.9277 11.6028 26.6778 10.8531 27.6029 10.8531C28.5281 10.8531 29.2782 11.6028 29.2782 12.5275ZM34.0353 14.2269C33.929 11.9839 33.4165 9.9971 31.7724 8.36015C30.1346 6.7232 28.1468 6.21087 25.9027 6.0984C23.5898 5.9672 16.6573 5.9672 14.3444 6.0984C12.1065 6.20462 10.1187 6.71695 8.47463 8.3539C6.83059 9.99085 6.32426 11.9777 6.21174 14.2207C6.08046 16.5324 6.08046 23.4613 6.21174 25.7731C6.318 28.0161 6.83059 30.0029 8.47463 31.6399C10.1187 33.2768 12.1003 33.7891 14.3444 33.9016C16.6573 34.0328 23.5898 34.0328 25.9027 33.9016C28.1468 33.7954 30.1346 33.2831 31.7724 31.6399C33.4102 30.0029 33.9228 28.0161 34.0353 25.7731C34.1666 23.4613 34.1666 16.5387 34.0353 14.2269ZM31.0473 28.2535C30.5597 29.4781 29.6158 30.4215 28.3843 30.9151C26.5403 31.6461 22.1645 31.4774 20.1266 31.4774C18.0888 31.4774 13.7068 31.6399 11.869 30.9151C10.6438 30.4278 9.69984 29.4843 9.20601 28.2535C8.47463 26.4104 8.64341 22.0368 8.64341 20C8.64341 17.9632 8.48088 13.5834 9.20601 11.7465C9.69359 10.5219 10.6375 9.57849 11.869 9.0849C13.713 8.3539 18.0888 8.52259 20.1266 8.52259C22.1645 8.52259 26.5465 8.36015 28.3843 9.0849C29.6095 9.57224 30.5535 10.5157 31.0473 11.7465C31.7787 13.5896 31.6099 17.9632 31.6099 20C31.6099 22.0368 31.7787 26.4166 31.0473 28.2535Z" fill="white"/>
-           </svg>
+           <a href='https://github.com/maryaaama' target="_blank" rel="noopener noreferrer">
+           <svg xmlns="http://www.w3.org/2000/svg" className='fill-[#286eb4]' width="39" height="39" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
            </a>
            </div>
            <div className='bg-[#eca348] rounded-full  w-12 h-12 flex justify-center items-center mr-2'>
