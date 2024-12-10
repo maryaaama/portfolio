@@ -11,11 +11,11 @@
   "My Skills": "مهارت‌های من",
   "Experience": " تجربه ها",
   "Education": "تحصیلات",
-  "Insurance Employee": "کارمند بیمه",
+  "Insurance employee": "کارمند بیمه",
   "Iran Insurance Office": "دفتر بیمه ایران",
-  "WordPress Website": "وب‌سایت وردپرس",
+  "WordPress website": "وب‌سایت وردپرس",
   "Personal Business": "کسب‌وکار شخصی",
-  "Shomal University": "دانشگاه شمال",
+  "Software Engineering, North University": "مهندسی نرم افزار دانشگاه شمال",
   "Freecodecamp Front End Development": "توسعه فرانت‌اند Freecodecamp",
   "Sabzlearn JavaScript": "javascript سبزلرن",
   "Sabzlearn ReactJS": "reactjs سبزلرن",
@@ -31,6 +31,8 @@
   "2020 2022":"1399 1401",
   "2018 2020":"1397 1399",
   "2007 2010":"1386 1389",
-  "Download CV":"دانلود رزومه"
+  "Download CV":"دانلود رزومه",
+  "About Me":"درباره من",
+  "My name is Maryam Alipour, a software engineer specializing in front-end development with a passion for learning computer sciences. Currently, I am available for remote work or project-based opportunities, and I can be present in Tehran for essential tasks or project deliveries. Alongside my technical expertise, I prioritize developing business skills, self-awareness, and understanding personality types to continually grow both professionally and personally.":" مریم علیپور هستم، مهندس نرم‌افزار و برنامه‌نویس فرانت‌اند که به یادگیری علوم کامپیوتر علاقه‌مندم. در حال حاضر آماده همکاری به صورت دورکاری یا پروژه‌ای هستم و برای تحویل کار یا موارد ضروری امکان حضور در تهران را دارم. در کنار مهارت‌های تخصصی، یادگیری مهارت‌های تجاری، خودآگاهی و شناخت تیپ‌های شخصیتی از اولویت‌های من بوده و تمام تلاشم را برای پیشرفت در این زمینه‌ها می‌کنم"
   
 }

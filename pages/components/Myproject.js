@@ -3,7 +3,7 @@ import React from 'react';
 const MyProject = ({ id, name, href, imageSrc }) => {
   return (
     <div className="relative overflow-hidden border rounded-xl caret-black shadow-md group">
-      <h5>{name}</h5>
+      <h5 className='lg:text-lg text-xs'>{name}</h5>
       <img 
         className="w-full h-auto transition-transform duration-500 hover:opacity-50 hover:-translate-y-1 hover:scale-110" 
         src={imageSrc} 

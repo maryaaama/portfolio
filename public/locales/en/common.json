@@ -11,11 +11,11 @@
     "My Skills": "My Skills",
     "Experience": "Experience",
     "Education": "Education",
-    "Insurance Employee": "Insurance Employee",
+    "Insurance employee": "Insurance employee",
     "Iran Insurance Office": "Iran Insurance Office",
-    "WordPress Website": "WordPress Website",
+    "WordPress website": "WordPress website",
     "Personal Business": "Personal Business",
-    "Shomal University": "Shomal University",
+    "Software Engineering, North University": "Software Engineering, North University",
     "Freecodecamp Front End Development": "Freecodecamp Front End Development",
     "Sabzlearn JavaScript": "Sabzlearn JavaScript",
     "Sabzlearn ReactJS": "Sabzlearn ReactJS",
@@ -31,6 +31,7 @@
      "2020 2022":"2020 2022",
      "2018 2020":"2018 2020",
      "2007 2010":"2007 2010",
-     "Download CV":"Download CV"
+     "Download CV":"Download CV",
+     "About Me":"About Me"
      
   }

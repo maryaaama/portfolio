@@ -43,8 +43,8 @@ export default function Home() {
       </Head>
       <main className="flex flex-col items-center dark:bg-gray-900 dark:text-white">
       <div style={{backgroundImage: `url('img/back8.jpg')` }} className="bg-fixed bg-cover bg-no-repeat relative h-3/4 w-full  rtl:bg-right">
-        <div className=" z-10 sticky flex items-center justify-between w-full backdrop-contrast-50 p-4 bg-gray-100 dark:bg-gray-800 rounded-lg shadow-lg">
-          <p className="text-lg text-slate-600 dark:text-slate-200 rtl:text-right rtl:font-IRANRounded">
+        <div className=" z-10 sticky flex items-center justify-between w-full backdrop-contrast-50 lg:p-4 p-0 bg-gray-100 dark:bg-gray-800 rounded-lg shadow-lg">
+          <p className="lg:text-lg text-base text-slate-600 dark:text-slate-200 rtl:text-right rtl:font-IRANRounded">
             {t("maryam alipour")}
           </p>
           <ThemeToggle/>
@@ -74,7 +74,7 @@ export default function Home() {
          </MenuItem>
          <MenuItem>
           <a className="block data-[focus]:bg-blue-100 dark:data-[focus]:bg-blue-700 rtl:text-left rtl:font-IRANRounded" href="#projects">
-          {t('projects')}
+          {t('Projects')}
           </a>
          </MenuItem>
         </MenuItems>
@@ -116,7 +116,7 @@ export default function Home() {
          </div>
         </div>
         <div className="flex items-center justify-around w-full py-16 dark:bg-gray-900 dark:text-white rtl:text-right">
-          <div className="flex flex-col items-start">
+          <div className="flex flex-col lg:items-start items-center ml-5 rtl:mr-5">
             <h3 className="mb-3 lg:text-3xl text-lg font-bold rtl:text-right rtl:font-IRANRounded">{t("I'm")}</h3>
             <h1 className="lg:text-7xl text-3xl  mb-3 font-bold rtl:text-right rtl:font-IRANRounded rtl:mb-6">{t("Maryam Alipour")}</h1>
             <h2 className="lg:text-4xl text-3xl font-medium animate-pulse rtl:text-right rtl:font-IRANRounded ">{t("Front End Developer")}</h2>
@@ -124,7 +124,7 @@ export default function Home() {
               <a href="/Maryam Alipour_1403-9-5-1.pdf" 
                  target="_blank" 
                  rel="noopener noreferrer" 
-                 className="bg-[#eca348] p-4 rounded-lg text-white text-xl ease-in duration-300 rtl:text-left  rtl:font-IRANRounded">{t("Download CV")}</a>
+                 className="bg-[#eca348] p-4 rounded-lg text-white lg:text-xl text-base ease-in duration-300 rtl:text-left  rtl:font-IRANRounded">{t("Download CV")}</a>
             </div>
           </div>
           <div>
@@ -209,40 +209,44 @@ export default function Home() {
           </div>
         </div>
       </div> */}
-      <div className="flex flex-col lg:flex-row justify-around w-2/3 mt-10 mb-10">
-        <div className=" basis-2/4 rtl:ml-10 ">
-          <h1 id='experience' className="text-5xl mb-12 rtl:text-center rtl:font-IRANRounded">{t("Skills & Experience")}</h1>
+      <div className='lg:w-2/3 w-11/12 my-16'>
+        <span className='lg:text-2xl text-xl mb-7'>{t("About Me")}</span>
+        <p className='lg:text-xl text-lg text-justify'>{t("My name is Maryam Alipour, a software engineer specializing in front-end development with a passion for learning computer sciences. Currently, I am available for remote work or project-based opportunities, and I can be present in Tehran for essential tasks or project deliveries. Alongside my technical expertise, I prioritize developing business skills, self-awareness, and understanding personality types to continually grow both professionally and personally.")}</p>
+      </div>
+      <div className="flex  flex-col lg:flex-row lg:justify-around justify-center lg:w-2/3 w-11/12 my-10">
+        <div className=" basis-full lg:basis-2/4 rtl:ml-10 ">
+          <h1 id='experience' className="lg:text-5xl text-2xl mb-12 rtl:text-center rtl:font-IRANRounded">{t("Skills & Experience")}</h1>
           
-          <h3 id='Skills' className="text-3xl rtl:text-right rtl:font-IRANRounded">{t("My Skills")}</h3>
+          <h3 id='Skills' className="lg:text-3xl text-xl rtl:text-right rtl:font-IRANRounded">{t("My Skills")}</h3>
           <div className="grid grid-cols-2 gap-4 mt-5">
            <div className="flex w-full flex-col gap-4">
-             <h6 className='text-base'>html</h6>
+             <h6 className='lg:text-base text-xs'>html</h6>
              <ProgressBar value={99} color="#8A2BE2"/>
-             <h6 className='text-base'>css</h6>
+             <h6 className='lg:text-base text-xs'>css</h6>
              <ProgressBar value={95} color="#FFA500"/>
-             <h6 className='text-base'>Javascript</h6>
+             <h6 className='lg:text-base text-xs'>Javascript</h6>
              <ProgressBar value={90} color="#0000FF"/>
            </div>
            <div className="flex w-full flex-col gap-4">
-           <h6 className='text-base'>tailwindcss</h6>
+           <h6 className='lg:text-base text-xs'>tailwindcss</h6>
            <ProgressBar value={85} color="#286eb4"/>
-             <h6 className='text-base'>next js</h6>
+             <h6 className='lg:text-base text-xs'>next js</h6>
              <ProgressBar value={55} color="black"/>
-             <h6 className='text-base'>react js</h6>
+             <h6 className='lg:text-base text-xs'>react js</h6>
              <ProgressBar value={90} color="#DC143C"/>
            </div>
           </div>
         </div>
-        <div className="ml-10  basis-2/4 ">
+        <div className="lg:ml-10 basis-full w-11/12  lg:w-1/2 lg:basis-2/4 mx-0 mt-8 lg:mt-0 ">
           <div className="grid grid-cols-2 place-content-stretch border-[#eca348] border-2 rounded-lg w-full ">
             <button
-               className={`rtl:text-center rtl:font-IRANRounded text-2xl py-4 ${activeTab === 'experience' ? 'bg-[#eca348] ' : ''}`}
+               className={`rtl:text-center rtl:font-IRANRounded lg:text-2xl text-lg py-4 ${activeTab === 'experience' ? 'bg-[#eca348] ' : ''}`}
                onClick={() => setActiveTab('experience')}
              >
                {t("Experience")}
              </button>
              <button
-               className={`rtl:text-center rtl:font-IRANRounded text-2xl py-4 ${activeTab === 'education' ? 'bg-[#eca348]' : ''}`}
+               className={`rtl:text-center rtl:font-IRANRounded lg:text-2xl text-lg py-4 ${activeTab === 'education' ? 'bg-[#eca348]' : ''}`}
                onClick={() => setActiveTab('education')}
              >
                {t("Education")}
@@ -252,31 +256,31 @@ export default function Home() {
            {activeTab === 'experience' && (
              <div className='grid grid-cols-2 gap-4 mt-5 pl-5'>
                <div className='grid gap-y-5'>
-                 <div className='mb-5'>
-                 <h5 className='text-2xl rtl:text-right rtl:font-IRANRounded'>{t("Front End Developer")}</h5>
+                 <div className='mb-5 rtl:mr-5'>
+                 <h5 className='lg:text-2xl text-sm rtl:text-right rtl:font-IRANRounded'>{t("Front End Developer")}</h5>
                  <hr className='my-2 text-current'></hr>
-                 <p className='text-l text-[#286eb4] rtl:text-right'>{t("2022 2024")}</p>
-                 <h6 className='text-xl rtl:text-right rtl:font-IRANRounded'>Karjoo.plus</h6>
+                 <p className='lg:text-lg text-xs text-[#286eb4] rtl:text-right'>{t("2022 2024")}</p>
+                 <h6 className='lg:text-xl text-sm rtl:text-right rtl:font-IRANRounded'>Karjoo.plus</h6>
                  </div>
-                 <div>
-                 <h5 className='text-2xl rtl:text-right rtl:font-IRANRounded'>{t("Insurance employee")}</h5>
+                 <div className='rtl:mr-5'>
+                 <h5 className='lg:text-2xl text-sm rtl:text-right rtl:font-IRANRounded'>{t("Insurance employee")}</h5>
                  <hr className='my-2 text-current'></hr>
-                 <p className='text-l text-[#286eb4] rtl:text-right'>{t("2020 2022")}</p>
-                 <h6 className='text-xl rtl:text-right rtl:font-IRANRounded'>{t("Iran Insurance Office")}</h6>
+                 <p className='lg:text-lg text-xs text-[#286eb4] rtl:text-right'>{t("2020 2022")}</p>
+                 <h6 className='lg:text-xl text-sm rtl:text-right rtl:font-IRANRounded'>{t("Iran Insurance Office")}</h6>
                  </div>
                </div>
-               <div className='grid gap-y-5'>
+               <div className='grid gap-y-5 rtl:mr-5'>
                <div className='mb-5'>
-                 <h5 className='text-2xl rtl:text-right rtl:font-IRANRounded'>{t("WordPress website")}</h5>
+                 <h5 className='lg:text-2xl text-sm rtl:text-right rtl:font-IRANRounded'>{t("WordPress website")}</h5>
                  <hr className='my-2 text-current'></hr>
-                 <p className='text-l text-[#286eb4] rtl:text-right'>{t("2018 2020")}</p>
-                 <h6 className='text-xl rtl:text-right rtl:font-IRANRounded'>{t("Personal business")}</h6>
+                 <p className='lg:text-lg text-xs text-[#286eb4] rtl:text-right'>{t("2018 2020")}</p>
+                 <h6 className='lg:text-xl text-sm rtl:text-right rtl:font-IRANRounded'>{t("Personal business")}</h6>
                  </div>
              <div>
-                 <h5 className='text-2xl rtl:text-right rtl:font-IRANRounded'>{t("Training Manager")}</h5>
+                 <h5 className='lg:text-2xl text-sm rtl:text-right rtl:font-IRANRounded'>{t("Training Manager")}</h5>
                  <hr className='my-2 text-current w-1/2'></hr>
-                 <p className='text-l text-[#286eb4] rtl:text-right'>{t("2007 2010")}</p>
-                 <h6 className='text-xl rtl:text-right rtl:font-IRANRounded'>{t("Ishraq School of Zanjan")}</h6>
+                 <p className='lg:text-lg text-xs text-[#286eb4] rtl:text-right'>{t("2007 2010")}</p>
+                 <h6 className='lg:text-xl text-sm rtl:text-right rtl:font-IRANRounded'>{t("Ishraq School of Zanjan")}</h6>
                  </div>
                </div>
              </div>
@@ -285,10 +289,10 @@ export default function Home() {
            {activeTab === 'education' && (
             <div className='grid grid-cols-2 gap-4 mt-5 pl-5'>
               <div className='grid gap-y-5'>
-                <h2 className='text-2xl rtl:text-left rtl:font-IRANRounded'>{t("Shomal University")}</h2>
-                <a href='https://www.freecodecamp.org/certification/fcc7f968b53-fdcb-4867-8250-f6686f422f81/front-end-development-libraries'><h2 className='text-cyan-400 text-2xl'>{t("Freecodecamp Front End Development")}</h2></a>
-                <h2 className='text-2xl rtl:text-left rtl:font-IRANRounded'>{t("Sabzlearn Javascript")}</h2>
-                <h2 className='text-2xl rtl:text-left rtl:font-IRANRounded'>{t("Sabzlearn Reactjs")}</h2>
+                <h2 className='lg:text-2xl text-sm rtl:mr-5 rtl:font-IRANRounded'>{t("Software Engineering, North University")}</h2>
+                <a href='https://www.freecodecamp.org/certification/fcc7f968b53-fdcb-4867-8250-f6686f422f81/front-end-development-libraries'><h2 className='text-cyan-400 lg:text-2xl text-sm rtl:mr-5'>{t("Freecodecamp Front End Development")}</h2></a>
+                <h2 className='lg:text-2xl text-sm rtl:mr-5 rtl:font-IRANRounded'>{t("Sabzlearn Javascript")}</h2>
+                <h2 className='lg:text-2xl text-sm rtl:mr-5 rtl:font-IRANRounded'>{t("Sabzlearn Reactjs")}</h2>
               </div>
              {/* <div className='grid gap-y-5'>
                 <h2 className='text-2xl'>IOS Development</h2>
@@ -300,8 +304,8 @@ export default function Home() {
            )}
         </div>
       </div>
-      <div id='Projects' className='my-10 w-2/3'>
-          <h1 className='text-5xl mb-10 rtl:text-right rtl:font-IRANRounded'>{t("My Projects")}</h1>
+      <div id='Projects' className='my-10 lg:w-2/3 w-11/12'>
+          <h1 className='lg:text-5xl text-xl mb-10 rtl:text-right rtl:font-IRANRounded ml-9 lg:ml-0 rtl:mr-9'>{t("My Projects")}</h1>
           <div className='grid grid-cols-3 gap-3'>
             {db.projects.map((project) => (
                <MyProject key={project.id} {...project}/>
@@ -310,17 +314,17 @@ export default function Home() {
           </div>
       </div>
       <div className=' w-full flex justify-center'>
-       <div className='grid grid-cols w-1/2 py-24 sm:py-32'>
+       <div className='grid grid-cols lg:w-1/2 w-full py-24 lg:py-32 ml-9 lg:ml-0 rtl:mr-9'>
         <div className='py-10'>
-          <h1 className='text-5xl rtl:text-right rtl:font-IRANRounded'>{t("Let's Work Together")}</h1>
+          <h1 className='lg:text-5xl text-xl rtl:text-right rtl:font-IRANRounded'>{t("Let's Work Together")}</h1>
           <div className='mt-16'>
-            <p className='text-xl text-slate-500 mb-5 rtl:text-right rtl:font-IRANRounded'>{t("Call me:")}</p>
-            <h3 className='text-3xl'>09193429924</h3>
+            <p className='lg:text-xl text-lg text-slate-500 mb-5 rtl:text-right rtl:font-IRANRounded'>{t("Call me:")}</p>
+            <h3 className='lg:text-3xl text-lg'>09193429924</h3>
             <hr></hr>
           </div>
           <div className='mt-16'>
-            <p className='text-xl text-slate-500 mb-5 rtl:text-right rtl:font-IRANRounded'>{t("Mail me:")}</p>
-            <h3 className='text-3xl'>maryamalipour1901@gmail.com</h3>
+            <p className='lg:text-xl text-lg text-slate-500 mb-5 rtl:text-right rtl:font-IRANRounded'>{t("Mail me:")}</p>
+            <h3 className='lg:text-3xl text-lg'>maryamalipour1901@gmail.com</h3>
             <hr></hr>
           </div>
          <div className='mt-16'>
