@@ -2,9 +2,9 @@
     "projects":[
         {
             "id": 1,
-            "name": "Calculator",
-            "href": "https://maryaaama.github.io/calculator/",
-            "imageSrc": "img/calculator.jpg"
+            "name": "landing karjoo",
+            "href": "https://karjoo.plus",
+            "imageSrc": "img/karjoo.jpg"
             
           },
         {
@@ -28,9 +28,9 @@
           },
         {
             "id": 5,
-            "name": "Drum-Machine",
-            "href": "https://maryaaama.github.io/Drum-Machine/",
-            "imageSrc": "img/drum.jpg"
+            "name": "Calculator",
+            "href": "https://maryaaama.github.io/calculator/",
+            "imageSrc": "img/calculator.jpg"
         },
         {
             "id": 6,

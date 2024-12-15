@@ -21,10 +21,31 @@ export async function getServerSideProps({ locale }) {
 }
 
 export default function Home() {
+
   const [activeTab, setActiveTab] = useState('experience');
   const [language, setLanguage] = useState('en'); 
   const { t } = useTranslation('common');
-  
+  const [backgroundImage, setBackgroundImage] = useState("");
+  const [isRtl, setIsRtl] = useState(false);
+
+  useEffect(() => {
+    const updateBackground = () => {
+      if (window.innerWidth >= 1024) {
+        setBackgroundImage("url('img/back8.jpg')");
+      } else {
+        setBackgroundImage(""); 
+      }
+    };
+    if (typeof document !== "undefined") {
+      setIsRtl(document.documentElement.dir === 'rtl');
+    }
+    updateBackground();
+    window.addEventListener("resize", updateBackground);
+    return () => {
+      window.removeEventListener("resize", updateBackground);
+    };
+  }, []);
+
  
   return (
     <>
@@ -42,54 +63,54 @@ export default function Home() {
          />
       </Head>
       <main className="flex flex-col items-center dark:bg-gray-900 dark:text-white">
-      <div style={{backgroundImage: `url('img/back8.jpg')` }} className="bg-fixed bg-cover bg-no-repeat relative h-3/4 w-full  rtl:bg-right">
-        <div className=" z-10 sticky flex items-center justify-between w-full backdrop-contrast-50 lg:p-4 p-0 bg-gray-100 dark:bg-gray-800 rounded-lg shadow-lg">
-          <p className="lg:text-lg text-base text-slate-600 dark:text-slate-200 rtl:text-right rtl:font-IRANRounded">
+        <div  style={{
+           backgroundImage,
+           }} className="bg-fixed bg-cover bg-no-repeat relative h-full w-full rtl:bg-right">
+        <div className=" z-10 sticky flex items-center justify-between w-full backdrop-contrast-50 lg:p-2 p-0 bg-gray-100 dark:bg-gray-800  shadow-lg">
+         <div className="flex items-center lg:space-x-4 space-x-2 rtl:space-x-reverse">
+           <p className="lg:text-lg text-base text-slate-600 dark:text-slate-200 rtl:text-right ml-2 rtl:mr-2 rtl:font-IRANRounded">
             {t("maryam alipour")}
-          </p>
+           </p>
+           <LanguageSwitcher/>
+         </div>
+          <div className="flex items-center  lg:space-x-4 space-x-0 rtl:space-x-reverse">
           <ThemeToggle/>
-          <LanguageSwitcher/>
-        <div className="sm:hidden">
-        <Menu>
-           <MenuButton className='text-slate-600 dark:text-slate-100'>
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-6">
-               <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
-           </svg>
-           </MenuButton>
-           <MenuItems anchor="bottom" className="bg-white dark:bg-gray-900">
-          {/* <MenuItem >
-           <a className="block data-[focus]:bg-blue-100 dark:data-[focus]:bg-blue-700 rtl:text-left rtl:font-IRANRounded " href="/settings">
-           {t("services")}
-           </a>
-         </MenuItem>*/}
-         <MenuItem>
-          <a className="block data-[focus]:bg-blue-100 dark:data-[focus]:bg-blue-700 rtl:text-left rtl:font-IRANRounded" href="#experience">
-          {t("Experience")}
-          </a>
-         </MenuItem>
-         <MenuItem>
-          <a className="block data-[focus]:bg-blue-100 dark:data-[focus]:bg-blue-700 rtl:text-left rtl:font-IRANRounded" href="#Skills">
-          {t('Skills')}
-          </a>
-         </MenuItem>
-         <MenuItem>
-          <a className="block data-[focus]:bg-blue-100 dark:data-[focus]:bg-blue-700 rtl:text-left rtl:font-IRANRounded" href="#projects">
-          {t('Projects')}
-          </a>
-         </MenuItem>
-        </MenuItems>
-        </Menu>
-        </div>
-         <div className="sm:flex justify-between hidden">
-        { /* <div className="mr-5">
-          <a
-              href="#"
-              className="flex items-center"
+          <div className="lg:hidden relative flex justify-center mx-0 pr-2 rtl:pl-2">
+           <Menu>
+            <MenuButton className="text-slate-600 dark:text-slate-100">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
+              <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+              </svg>
+            </MenuButton>
+            <MenuItems
+             anchor="bottom"
+             className="absolute z-50 bg-white dark:bg-gray-900 top-full mt-2 w-40 shadow-lg rounded-md"
+             style={{
+              left: isRtl ? '0' : 'auto',
+              right: !isRtl ? '0' : 'auto',
+              }}
             >
-              <h1 className="text-slate-600 rtl:text-left rtl:font-IRANRounded">{t('services')}</h1>
+           <MenuItem>
+            <a className="block px-4 py-2 data-[focus]:bg-blue-100 dark:data-[focus]:bg-blue-700 rtl:text-left rtl:font-IRANRounded text-xs" href="#experience">
+              {t("Experience")}
             </a>
-          </div>*/}
-          <div className="mr-5">
+           </MenuItem>
+           <MenuItem>
+            <a className="block px-4 py-2 data-[focus]:bg-blue-100 dark:data-[focus]:bg-blue-700 rtl:text-left rtl:font-IRANRounded text-xs" href="#Skills">
+              {t("Skills")}
+            </a>
+           </MenuItem>
+           <MenuItem>
+            <a className="block px-4 py-2 data-[focus]:bg-blue-100 dark:data-[focus]:bg-blue-700 rtl:text-left rtl:font-IRANRounded text-xs" href="#projects">
+              {t("Projects")}
+            </a>
+            </MenuItem>
+            </MenuItems>
+           </Menu>
+          </div>
+          <div className="lg:flex justify-between hidden  ">
+       
+           <div className="mr-5 rtl:ml-5">
             <a
               href="#experience"
               className="flex items-center"
@@ -97,7 +118,7 @@ export default function Home() {
               <h1 className="text-slate-600 rtl:text-left rtl:font-IRANRounded">{t('Experience')}</h1>
             </a>
           </div>
-          <div className="mr-5">
+          <div className="mr-5 rtl:ml-5">
             <a
               href="#Skills"
               className="flex items-center"
@@ -105,7 +126,7 @@ export default function Home() {
               <h1 className="text-slate-600 rtl:text-left rtl:font-IRANRounded">{t('Skills')}</h1>
             </a>
           </div>
-          <div className="mr-5">
+          <div className="mr-5 rtl:ml-5">
             <a
               href="#Projects"
               className="flex items-center"
@@ -113,33 +134,34 @@ export default function Home() {
               <h1 className="text-slate-600 rtl:text-left rtl:font-IRANRounded ">{t('Projects')}</h1>
             </a>
           </div>
+          </div>
+          </div>
          </div>
-        </div>
-        <div className="flex items-center justify-around w-full py-16 dark:bg-gray-900 dark:text-white rtl:text-right">
-          <div className="flex flex-col lg:items-start items-center ml-5 rtl:mr-5">
-            <h3 className="mb-3 lg:text-3xl text-lg font-bold rtl:text-right rtl:font-IRANRounded">{t("I'm")}</h3>
-            <h1 className="lg:text-7xl text-3xl  mb-3 font-bold rtl:text-right rtl:font-IRANRounded rtl:mb-6">{t("Maryam Alipour")}</h1>
-            <h2 className="lg:text-4xl text-3xl font-medium animate-pulse rtl:text-right rtl:font-IRANRounded ">{t("Front End Developer")}</h2>
-            <div className="flex mt-3">
-              <a href="/Maryam Alipour_1403-9-5-1.pdf" 
+            <div className="flex flex-row items-center justify-center lg:w-full w-11/12 py-16 dark:bg-gray-900 dark:text-white rtl:text-right">
+              <div className="flex flex-col lg:items-start items-center ml-5 rtl:mr-5">
+              <h3 className="mb-3 lg:text-3xl text-lg font-bold rtl:text-right rtl:font-IRANRounded">{t("I'm")}</h3>
+              <h1 className="lg:text-7xl text-3xl  mb-3 font-bold rtl:text-right rtl:font-IRANRounded rtl:mb-6">{t("Maryam Alipour")}</h1>
+              <h2 className="lg:text-4xl text-3xl font-medium animate-pulse rtl:text-right rtl:font-IRANRounded ">{t("Front End Developer")}</h2>
+              <div className="flex mt-3">
+               <a href="/Maryam Alipour_1403-9-5-1-1.pdf" 
                  target="_blank" 
                  rel="noopener noreferrer" 
                  className="bg-[#eca348] p-4 rounded-lg text-white lg:text-xl text-base ease-in duration-300 rtl:text-left  rtl:font-IRANRounded">{t("Download CV")}</a>
+              </div>
+              </div>
+              <div className="w-full max-w-[580px]  ">
+                <Image
+                  src="/img/ax11.png"
+                  alt=""
+                  layout="responsive"
+                  width={480}
+                  height={480}
+                  priority
+                />
+              </div>
             </div>
-          </div>
-          <div>
-          <Image
-            className="w-full"
-            src="/img/ax11.png"
-            alt=""
-            width={480}
-            height={480}
-            priority
-          />
-          </div>
-        </div>
         
-      </div>
+        </div>
      {/* <div className="bg-slate-100 w-full flex flex-col items-center mb-10">
        <div className="grid grid-cols-2 place-content-between w-7/12 my-5">
          <h1 className="text-5xl">My Servises</h1>

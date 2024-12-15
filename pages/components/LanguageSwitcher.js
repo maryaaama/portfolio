@@ -18,12 +18,12 @@ export default function LanguageSwitcher() {
   };
 
   return (
-    <div className="flex space-x-4 rtl:space-x-reverse">
+    <div className="flex lg:space-x-4 space-x-2 rtl:space-x-reverse text-sm sm:text-base">
       {locales.map((lang) => (
         <button
           key={lang}
           onClick={() => changeLanguage(lang)}
-          className={`px-4 py-2 rounded ${
+          className={`lg:px-4 py-2 px-2.5  rounded ${
             lang === locale ? 'bg-blue-500 text-white' : 'bg-gray-300'
           }`}
         >
