@@ -1,13 +1,15 @@
 import React from 'react';
-
+import Image from 'next/image';
 const MyProject = ({ id, name, href, imageSrc }) => {
   return (
     <div className="relative overflow-hidden border rounded-xl caret-black shadow-md group">
       <h5 className='lg:text-lg text-xs ml-3 mt-1 rtl:text-center'>{name}</h5>
-      <img 
+      <Image
         className="w-full h-auto transition-transform duration-500 hover:opacity-50 hover:-translate-y-1 hover:scale-110" 
         src={imageSrc} 
         alt={id} 
+        width={454} 
+        height={454}
       />
       <div className="w-14 h-14 absolute bottom-20 left-10 invisible group-hover:visible transition-transform duration-500 transform group-hover:translate-y-6 border-2 border-[#eca348] hover:bg-[#c48942] rounded-lg flex justify-center items-center">
         

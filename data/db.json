@@ -4,39 +4,39 @@
             "id": 1,
             "name": "landing karjoo",
             "href": "https://karjoo.plus",
-            "imageSrc": "img/karjoo.jpg"
+            "imageSrc": "/img/karjoo.jpg"
             
           },
         {
             "id": 2,
             "name": "Clock",
             "href": "https://maryaaama.github.io/clock/",
-            "imageSrc": "img/clock.jpg"
+            "imageSrc": "/img/clock.jpg"
         },
         {
             "id": 3,
             "name": "Dashbord",
             "href": "https://maryaaama.github.io/graphql-dashbord/",
-            "imageSrc": "img/dashboardax.jpg"
+            "imageSrc": "/img/dashboardax.jpg"
         },
         {
             "id": 4,
             "name": "random-quoter",
             "href": "https://maryaaama.github.io/random-quote/",
-            "imageSrc": "img/quote.jpg"
+            "imageSrc": "/img/quote.jpg"
             
           },
         {
             "id": 5,
             "name": "Calculator",
             "href": "https://maryaaama.github.io/calculator/",
-            "imageSrc": "img/calculator.jpg"
+            "imageSrc": "/img/calculator.jpg"
         },
         {
             "id": 6,
             "name": "markdown-previewer",
             "href": "https://maryaaama.github.io/markdown-previewer/",
-            "imageSrc": "img/markdown.jpg"
+            "imageSrc": "/img/markdown.jpg"
         }
         
     ]

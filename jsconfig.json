@@ -1,7 +1,12 @@
 {
   "compilerOptions": {
+    "baseUrl": ".", // Sets the root for imports
     "paths": {
-      "@/*": ["./*"]
+      "@/components/*": ["components/*"], // Aliases for components
+      "@/pages/*": ["pages/*"], // Aliases for pages
+      "@/styles/*": ["styles/*"], // Aliases for styles
+      "@/public/*": ["public/*"] // Aliases for public
     }
-  }
+  },
+  "exclude": ["node_modules"] // Exclude node_modules for cleaner compilation
 }

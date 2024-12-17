@@ -1,23 +1,21 @@
+/** @type {import('tailwindcss').Config} */
 const plugin = require('tailwindcss/plugin');
 const rtl = require('tailwindcss-rtl');
-/** @type {import('tailwindcss').Config} */
+
 module.exports = {
   darkMode: 'class',
   content: [
-    "./pages/**/*.{js,ts,jsx,tsx}",
-    "./components/**/*.{js,ts,jsx,tsx}",
-    "./styles/**/*.css",
+    "./pages/**/*.{js,ts,jsx,tsx}", // تمام فایل‌های صفحات
+    "./components/**/*.{js,ts,jsx,tsx}", // تمام فایل‌های کامپوننت‌ها
+    "./styles/**/*.css", // استایل‌های سفارشی
   ],
   theme: {
     extend: {
       fontFamily: {
         sans: ["Arial", "sans-serif"],
-      IRANRounded: ["IRAN Rounded", "sans-serif"],
+        IRANRounded: ["IRAN Rounded", "sans-serif"],
       },
     },
   },
-  plugins: [rtl,],
+  plugins: [rtl], // فعال‌سازی RTL
 };
-/* @type {import('tailwindcss').Config} */
-
-  //plugins: [require('tailwindcss-rtl')], // Pass the plugin directly

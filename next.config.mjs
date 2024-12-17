@@ -1,4 +1,3 @@
-
 import path from 'path';
 
 /** @type {import('next').NextConfig} */
@@ -7,7 +6,8 @@ const nextConfig = {
     locales: ['en', 'fa'], 
     defaultLocale: 'en', 
     localeDetection: false,
-    localePath: path.resolve('./public/locales'), 
+    // Remove 'localePath' as it is not supported in next.config.js
+
   },
   reactStrictMode: true,
 };

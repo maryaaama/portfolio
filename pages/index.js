@@ -1,3 +1,6 @@
+/* eslint-disable react/no-unescaped-entities */
+/* eslint-disable @next/next/no-img-element */
+
 import React, { useState , useEffect } from 'react';
 import Head from "next/head";
 import Image from "next/image";
@@ -22,9 +25,9 @@ export async function getServerSideProps({ locale }) {
 
 export default function Home() {
 
-  const [activeTab, setActiveTab] = useState('experience');
-  const [language, setLanguage] = useState('en'); 
-  const { t } = useTranslation('common');
+  const [activeTab, setActiveTab] = useState("experience");
+  const [language, setLanguage] = useState("en"); 
+  const { t } = useTranslation("common");
   const [backgroundImage, setBackgroundImage] = useState("");
   const [isRtl, setIsRtl] = useState(false);
 
@@ -37,7 +40,7 @@ export default function Home() {
       }
     };
     if (typeof document !== "undefined") {
-      setIsRtl(document.documentElement.dir === 'rtl');
+      setIsRtl(document.documentElement.dir === "rtl");
     }
     updateBackground();
     window.addEventListener("resize", updateBackground);
@@ -115,7 +118,7 @@ export default function Home() {
               href="#experience"
               className="flex items-center"
             >
-              <h1 className="text-slate-600 rtl:text-left rtl:font-IRANRounded">{t('Experience')}</h1>
+              <h1 className="text-slate-600 rtl:text-left rtl:font-IRANRounded">{t("Experience")}</h1>
             </a>
           </div>
           <div className="mr-5 rtl:ml-5">
@@ -123,7 +126,7 @@ export default function Home() {
               href="#Skills"
               className="flex items-center"
             >
-              <h1 className="text-slate-600 rtl:text-left rtl:font-IRANRounded">{t('Skills')}</h1>
+              <h1 className="text-slate-600 rtl:text-left rtl:font-IRANRounded">{t("Skills")}</h1>
             </a>
           </div>
           <div className="mr-5 rtl:ml-5">
@@ -131,7 +134,7 @@ export default function Home() {
               href="#Projects"
               className="flex items-center"
             >
-              <h1 className="text-slate-600 rtl:text-left rtl:font-IRANRounded ">{t('Projects')}</h1>
+              <h1 className="text-slate-600 rtl:text-left rtl:font-IRANRounded ">{t("Projects")}</h1>
             </a>
           </div>
           </div>
@@ -139,7 +142,7 @@ export default function Home() {
          </div>
             <div className="flex flex-row items-center justify-center lg:w-full w-11/12 py-16 dark:bg-gray-900 dark:text-white rtl:text-right">
               <div className="flex flex-col lg:items-start items-center ml-5 rtl:mr-5">
-              <h3 className="mb-3 lg:text-3xl text-lg font-bold rtl:text-right rtl:font-IRANRounded">{t("I'm")}</h3>
+              <h3 className="mb-3 lg:text-3xl text-lg font-bold rtl:text-right rtl:font-IRANRounded">{t("I am")}</h3>
               <h1 className="lg:text-7xl text-3xl  mb-3 font-bold rtl:text-right rtl:font-IRANRounded rtl:mb-6">{t("Maryam Alipour")}</h1>
               <h2 className="lg:text-4xl text-3xl font-medium animate-pulse rtl:text-right rtl:font-IRANRounded ">{t("Front End Developer")}</h2>
               <div className="flex mt-3">
@@ -151,7 +154,7 @@ export default function Home() {
               </div>
               <div className="w-full max-w-[580px]  ">
                 <Image
-                  src="/img/ax11.png"
+                  src="/img/ax11.webp"
                   alt=""
                   layout="responsive"
                   width={480}
@@ -263,13 +266,13 @@ export default function Home() {
           <div className="grid grid-cols-2 place-content-stretch border-[#eca348] border-2 rounded-lg w-full ">
             <button
                className={`rtl:text-center rtl:font-IRANRounded lg:text-2xl text-lg py-4 ${activeTab === 'experience' ? 'bg-[#eca348] ' : ''}`}
-               onClick={() => setActiveTab('experience')}
+               onClick={() => setActiveTab("experience")}
              >
                {t("Experience")}
              </button>
              <button
                className={`rtl:text-center rtl:font-IRANRounded lg:text-2xl text-lg py-4 ${activeTab === 'education' ? 'bg-[#eca348]' : ''}`}
-               onClick={() => setActiveTab('education')}
+               onClick={() => setActiveTab("education")}
              >
                {t("Education")}
              </button>
