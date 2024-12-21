@@ -6,10 +6,9 @@ const nextConfig = {
     locales: ['en', 'fa'], 
     defaultLocale: 'en', 
     localeDetection: false,
-    // Remove 'localePath' as it is not supported in next.config.js
-
   },
   reactStrictMode: true,
+  
 };
 
 export default nextConfig;

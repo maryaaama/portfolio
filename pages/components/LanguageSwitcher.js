@@ -24,7 +24,7 @@ export default function LanguageSwitcher() {
           key={lang}
           onClick={() => changeLanguage(lang)}
           className={`lg:px-4 py-2 px-2.5  rounded ${
-            lang === locale ? 'bg-blue-500 text-white' : 'bg-gray-300'
+            lang === locale ? 'bg-[#3895ce] text-white' : 'bg-gray-300'
           }`}
         >
           {lang.toUpperCase()}

@@ -140,22 +140,23 @@ export default function Home() {
           </div>
           </div>
          </div>
-            <div className="flex flex-row items-center justify-center lg:w-full w-11/12 py-16 dark:bg-gray-900 dark:text-white rtl:text-right">
-              <div className="flex flex-col lg:items-start items-center ml-5 rtl:mr-5">
-              <h3 className="mb-3 lg:text-3xl text-lg font-bold rtl:text-right rtl:font-IRANRounded">{t("I am")}</h3>
-              <h1 className="lg:text-7xl text-3xl  mb-3 font-bold rtl:text-right rtl:font-IRANRounded rtl:mb-6">{t("Maryam Alipour")}</h1>
-              <h2 className="lg:text-4xl text-3xl font-medium animate-pulse rtl:text-right rtl:font-IRANRounded ">{t("Front End Developer")}</h2>
+            <div className="flex flex-row items-center justify-center  lg:w-full w-11/12 py-16 dark:bg-gray-900 dark:text-white rtl:text-right">
+              <div className="flex flex-col items-start  ml-5 rtl:mr-5">
+              <h3 className="mb-3 lg:text-xl text-lg font-bold rtl:text-right rtl:font-IRANRounded">{t("I am")}</h3>
+              <h1 className="lg:text-7xl text-xl  mb-3 font-bold rtl:text-right rtl:font-IRANRounded rtl:mb-6">{t("Maryam Alipour")}</h1>
+              <h2 className="lg:text-4xl text-xl font-medium animate-pulse rtl:text-right rtl:font-IRANRounded mb-3 ">{t("Front End Developer")}</h2>
+              <h2 className="lg:text-4xl text-xl font-medium animate-pulse rtl:text-right rtl:font-IRANRounded ">{t("Software engineer")}</h2>
               <div className="flex mt-3">
                <a href="/Maryam Alipour_1403-9-5-1-1.pdf" 
                  target="_blank" 
                  rel="noopener noreferrer" 
-                 className="bg-[#eca348] p-4 rounded-lg text-white lg:text-xl text-base ease-in duration-300 rtl:text-left  rtl:font-IRANRounded">{t("Download CV")}</a>
+                 className="bg-gradient-to-r from-[#eca348] to-[#ee9324] p-4 rounded-lg text-white lg:text-xl text-xs ease-in duration-300 rtl:text-left  rtl:font-IRANRounded">{t("Download CV")}</a>
               </div>
               </div>
               <div className="w-full max-w-[580px]  ">
                 <Image
-                  src="/img/ax11.webp"
-                  alt=""
+                  src="/img/ax111.png"
+                  alt="My Image"
                   layout="responsive"
                   width={480}
                   height={480}
@@ -234,44 +235,67 @@ export default function Home() {
           </div>
         </div>
       </div> */}
-      <div className='lg:w-2/3 w-11/12 my-16'>
+      <div className='lg:w-2/3 w-11/12 my-16 bg-gradient-to-r from-[#dbf7fa] via-[#61bbef] to-[#3f94ca] shadow-2xl shadow-[#0b2057] rounded-xl lg:p-20 p-5'>
         <span className='lg:text-2xl text-xl mb-7'>{t("About Me")}</span>
         <p className='lg:text-xl text-lg text-justify'>{t("My name is Maryam Alipour, a software engineer specializing in front-end development with a passion for learning computer sciences. Currently, I am available for remote work or project-based opportunities, and I can be present in Tehran for essential tasks or project deliveries. Alongside my technical expertise, I prioritize developing business skills, self-awareness, and understanding personality types to continually grow both professionally and personally.")}</p>
       </div>
+
+
       <div className="flex  flex-col lg:flex-row lg:justify-around justify-center lg:w-2/3 w-11/12 my-10">
         <div className=" basis-full lg:basis-2/4 rtl:ml-10 ">
           <h1 id='experience' className="lg:text-5xl text-2xl mb-12 rtl:text-center rtl:font-IRANRounded">{t("Skills & Experience")}</h1>
-          
           <h3 id='Skills' className="lg:text-3xl text-xl rtl:text-right rtl:font-IRANRounded">{t("My Skills")}</h3>
           <div className="grid grid-cols-2 gap-4 mt-5">
-           <div className="flex w-full flex-col gap-4">
-             <h6 className='lg:text-base text-xs'>html</h6>
-             <ProgressBar value={99} color="#8A2BE2"/>
-             <h6 className='lg:text-base text-xs'>css</h6>
-             <ProgressBar value={95} color="#FFA500"/>
-             <h6 className='lg:text-base text-xs'>Javascript</h6>
-             <ProgressBar value={90} color="#0000FF"/>
-           </div>
-           <div className="flex w-full flex-col gap-4">
-           <h6 className='lg:text-base text-xs'>tailwindcss</h6>
-           <ProgressBar value={85} color="#286eb4"/>
-             <h6 className='lg:text-base text-xs'>next js</h6>
-             <ProgressBar value={55} color="black"/>
-             <h6 className='lg:text-base text-xs'>react js</h6>
-             <ProgressBar value={90} color="#DC143C"/>
-           </div>
+          <div className="flex w-full flex-col gap-4">
+            <div className="flex items-center justify-between">
+              <h6 className="lg:text-base text-xs">SQL</h6>
+              <span className="text-xs lg:text-base">50%</span>
+            </div>
+            <ProgressBar value={50} color="#8A2BE2" />
+
+            <div className="flex items-center justify-between">
+              <h6 className="lg:text-base text-xs">TypeScript</h6>
+              <span className="text-xs lg:text-base">50%</span>
+            </div>
+            <ProgressBar value={50} color="#FFA500" />
+
+            <div className="flex items-center justify-between">
+              <h6 className="lg:text-base text-xs">JavaScript</h6>
+              <span className="text-xs lg:text-base">90%</span>
+            </div>
+            <ProgressBar value={90} color="#0000FF" />
+          </div>
+          <div className="flex w-full flex-col gap-4">
+            <div className="flex items-center justify-between">
+              <h6 className="lg:text-base text-xs">TailwindCSS</h6>
+              <span className="text-xs lg:text-base">85%</span>
+            </div>
+            <ProgressBar value={85} color="#286eb4" />
+
+            <div className="flex items-center justify-between">
+              <h6 className="lg:text-base text-xs">Next.js</h6>
+              <span className="text-xs lg:text-base">65%</span>
+            </div>
+            <ProgressBar value={65} color="black" />
+
+            <div className="flex items-center justify-between">
+              <h6 className="lg:text-base text-xs">React.js</h6>
+              <span className="text-xs lg:text-base">90%</span>
+            </div>
+            <ProgressBar value={90} color="#DC143C" />
+          </div>
           </div>
         </div>
         <div className="lg:ml-10 basis-full w-11/12  lg:w-1/2 lg:basis-2/4 mx-0 mt-8 lg:mt-0 ">
           <div className="grid grid-cols-2 place-content-stretch border-[#eca348] border-2 rounded-lg w-full ">
             <button
-               className={`rtl:text-center rtl:font-IRANRounded lg:text-2xl text-lg py-4 ${activeTab === 'experience' ? 'bg-[#eca348] ' : ''}`}
+               className={`rtl:text-center rtl:font-IRANRounded lg:text-2xl text-lg py-4 ${activeTab === 'experience' ? 'bg-gradient-to-r from-[#eca348] to-[#ee9324] ' : ''}`}
                onClick={() => setActiveTab("experience")}
              >
                {t("Experience")}
              </button>
              <button
-               className={`rtl:text-center rtl:font-IRANRounded lg:text-2xl text-lg py-4 ${activeTab === 'education' ? 'bg-[#eca348]' : ''}`}
+               className={`rtl:text-center rtl:font-IRANRounded lg:text-2xl text-lg py-4 ${activeTab === 'education' ? 'bg-gradient-to-r from-[#eca348] to-[#ee9324]' : ''}`}
                onClick={() => setActiveTab("education")}
              >
                {t("Education")}
@@ -329,9 +353,11 @@ export default function Home() {
            )}
         </div>
       </div>
+
+
       <div id='Projects' className='my-10 lg:w-2/3 w-11/12'>
           <h1 className='lg:text-5xl text-xl mb-10 rtl:text-right rtl:font-IRANRounded ml-9 lg:ml-0 rtl:mr-9'>{t("My Projects")}</h1>
-          <div className='grid grid-cols-3 gap-3'>
+          <div className='grid grid-cols-2 lg:grid-cols-3 gap-5'>
             {db.projects.map((project) => (
                <MyProject key={project.id} {...project}/>
              ))
@@ -355,26 +381,24 @@ export default function Home() {
          <div className='mt-16'>
           <p className='text-xl text-slate-500 mb-7 rtl:font-IRANRounded'>Follow me:</p>
           <div className='flex'>
-           <div className='bg-[#eca348] rounded-full  w-12 h-12 flex justify-center items-center mr-2'>
+           <div className='bg-gradient-to-r via-40% via-[#f1d4ad] from-[#eca348] to-[#ee9324] rounded-lg shadow-lg shadow-slate-700 ring-2 ring-[#f5ad55] w-12 h-12 flex justify-center items-center mr-4'>
            <a href='https://github.com/maryaaama' target="_blank" rel="noopener noreferrer">
-           <svg xmlns="http://www.w3.org/2000/svg" className='fill-[#286eb4]' width="39" height="39" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+           <img src='/img/github.png'/>
            </a>
            </div>
-           <div className='bg-[#eca348] rounded-full  w-12 h-12 flex justify-center items-center mr-2'>
+           <div className='bg-gradient-to-r via-40% via-[#f1d4ad] from-[#eca348] to-[#f0890b] rounded-lg shadow-lg shadow-slate-700 ring-2 ring-[#f5ad55] w-12 h-12 flex justify-center items-center mr-4'>
            <a href='https://wa.me/9193429924?text=Hey%there%How’re%you%doing'target="_blank" rel="noopener noreferrer" >
-           <svg xmlns="http://www.w3.org/2000/svg" width="39" height="39" viewBox="0 0 32 32"><path className='fill-[#286eb4]' d="M25.873,6.069c-2.619-2.623-6.103-4.067-9.814-4.069C8.411,2,2.186,8.224,2.184,15.874c-.001,2.446,.638,4.833,1.852,6.936l-1.969,7.19,7.355-1.929c2.026,1.106,4.308,1.688,6.63,1.689h.006c7.647,0,13.872-6.224,13.874-13.874,.001-3.708-1.44-7.193-4.06-9.815h0Zm-9.814,21.347h-.005c-2.069,0-4.099-.557-5.87-1.607l-.421-.25-4.365,1.145,1.165-4.256-.274-.436c-1.154-1.836-1.764-3.958-1.763-6.137,.003-6.358,5.176-11.531,11.537-11.531,3.08,.001,5.975,1.202,8.153,3.382,2.177,2.179,3.376,5.077,3.374,8.158-.003,6.359-5.176,11.532-11.532,11.532h0Zm6.325-8.636c-.347-.174-2.051-1.012-2.369-1.128-.318-.116-.549-.174-.78,.174-.231,.347-.895,1.128-1.098,1.359-.202,.232-.405,.26-.751,.086-.347-.174-1.464-.54-2.788-1.72-1.03-.919-1.726-2.054-1.929-2.402-.202-.347-.021-.535,.152-.707,.156-.156,.347-.405,.52-.607,.174-.202,.231-.347,.347-.578,.116-.232,.058-.434-.029-.607-.087-.174-.78-1.88-1.069-2.574-.281-.676-.567-.584-.78-.595-.202-.01-.433-.012-.665-.012s-.607,.086-.925,.434c-.318,.347-1.213,1.186-1.213,2.892s1.242,3.355,1.416,3.587c.174,.232,2.445,3.733,5.922,5.235,.827,.357,1.473,.571,1.977,.73,.83,.264,1.586,.227,2.183,.138,.666-.1,2.051-.839,2.34-1.649,.289-.81,.289-1.504,.202-1.649s-.318-.232-.665-.405h0Z" fillRule="evenodd"></path></svg>
+           <img src='/img/whatsapp.png'/>
            </a>
            </div>
-           <div className='bg-[#eca348] rounded-full w-12 h-12 flex justify-center items-center mr-2'>
+           <div className='bg-gradient-to-r via-40% via-[#f1d4ad] from-[#eca348] to-[#f0890b] rounded-lg shadow-lg shadow-slate-700 ring-2 ring-[#f5ad55] w-12 h-12 flex justify-center items-center mr-4'>
            <a href='https://www.linkedin.com/in/maryaaam-alipour-43a0a022b' target="_blank" rel="noopener noreferrer">
-           <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28" fill="none">
-            <path className='fill-[#286eb4]' d="M6.77905 27.0504C6.77905 27.5769 6.35594 28 5.82942 28H1.81464C1.28811 28 0.86501 27.5769 0.86501 27.0504V10.1827C0.86501 9.65615 1.28811 9.23304 1.81464 9.23304H5.83882C6.36535 9.23304 6.78845 9.65615 6.78845 10.1827V27.0504H6.77905ZM3.82673 7.64406C1.71122 7.64406 0 5.93284 0 3.82673C0 1.72062 1.71122 0 3.82673 0C5.94224 0 7.65346 1.71122 7.65346 3.82673C7.65346 5.94224 5.93284 7.64406 3.82673 7.64406ZM27.812 27.135C27.812 27.6145 27.4265 28 26.9469 28H22.6313C22.1518 28 21.7663 27.6145 21.7663 27.135V19.2183C21.7663 18.0336 22.1142 14.047 18.6823 14.047C16.0215 14.047 15.4762 16.7831 15.3727 18.0054V27.135C15.3727 27.6145 14.9872 28 14.5077 28H10.3331C9.85359 28 9.4681 27.6145 9.4681 27.135V10.1075C9.4681 9.62794 9.85359 9.24245 10.3331 9.24245H14.5077C14.9872 9.24245 15.3727 9.62794 15.3727 10.1075V11.5836C16.36 10.0981 17.8267 8.96038 20.9483 8.96038C27.8684 8.96038 27.8214 15.4197 27.8214 18.9738L27.812 27.135Z" />
-           </svg>
+          <img src='/img/linkdin.png'/>
            </a>
            </div>
-           <div className='bg-[#eca348] rounded-full w-12 h-12 flex justify-center items-center mr-2'>
+           <div className='bg-gradient-to-r via-40% via-[#f1d4ad] from-[#eca348] to-[#f0890b] rounded-lg shadow-lg shadow-slate-700 ring-2 ring-[#f5ad55] bg-blend-darken w-12 h-12 flex justify-center items-center mr-4'>
            <a href='https://t.me/maryaaamalipour' target="_blank" rel="noopener noreferrer">
-           <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 32 32"><path className='fill-[#286eb4]' d="M16,2c-7.732,0-14,6.268-14,14s6.268,14,14,14,14-6.268,14-14S23.732,2,16,2Zm6.489,9.521c-.211,2.214-1.122,7.586-1.586,10.065-.196,1.049-.583,1.401-.957,1.435-.813,.075-1.43-.537-2.218-1.053-1.232-.808-1.928-1.311-3.124-2.099-1.382-.911-.486-1.412,.302-2.23,.206-.214,3.788-3.472,3.858-3.768,.009-.037,.017-.175-.065-.248-.082-.073-.203-.048-.29-.028-.124,.028-2.092,1.329-5.905,3.903-.559,.384-1.065,.571-1.518,.561-.5-.011-1.461-.283-2.176-.515-.877-.285-1.574-.436-1.513-.92,.032-.252,.379-.51,1.042-.773,4.081-1.778,6.803-2.95,8.164-3.517,3.888-1.617,4.696-1.898,5.222-1.907,.116-.002,.375,.027,.543,.163,.142,.115,.181,.27,.199,.379,.019,.109,.042,.357,.023,.551Z" fillRule="evenodd"></path></svg>
+           <img src='/img/telegram.png'/>
            </a>
            </div> 
           </div>

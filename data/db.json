@@ -2,41 +2,41 @@
     "projects":[
         {
             "id": 1,
-            "name": "landing karjoo",
+            "name": "Landing karjoo",
             "href": "https://karjoo.plus",
-            "imageSrc": "/img/karjoo.jpg"
+            "imageSrc": "/img/landing3.jpg"
             
           },
         {
             "id": 2,
             "name": "Clock",
             "href": "https://maryaaama.github.io/clock/",
-            "imageSrc": "/img/clock.jpg"
+            "imageSrc": "/img/clock1.jpg"
         },
         {
             "id": 3,
             "name": "Dashbord",
             "href": "https://maryaaama.github.io/graphql-dashbord/",
-            "imageSrc": "/img/dashboardax.jpg"
+            "imageSrc": "/img/dashbord1.jpg"
         },
         {
             "id": 4,
-            "name": "random-quoter",
+            "name": "Random-quoter",
             "href": "https://maryaaama.github.io/random-quote/",
-            "imageSrc": "/img/quote.jpg"
+            "imageSrc": "/img/quote1.jpg"
             
           },
         {
             "id": 5,
             "name": "Calculator",
             "href": "https://maryaaama.github.io/calculator/",
-            "imageSrc": "/img/calculator.jpg"
+            "imageSrc": "/img/cal.jpg"
         },
         {
             "id": 6,
-            "name": "markdown-previewer",
+            "name": "Markdown-previewer",
             "href": "https://maryaaama.github.io/markdown-previewer/",
-            "imageSrc": "/img/markdown.jpg"
+            "imageSrc": "/img/mark.jpg"
         }
         
     ]
