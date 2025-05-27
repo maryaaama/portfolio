@@ -4,40 +4,33 @@
             "id": 1,
             "name": "Landing karjoo",
             "href": "https://karjoo.plus",
-            "imageSrc": "/img/landing3.jpg"
-            
+            "imageSrc": "/img/landing3.jpg",
+             "description": "در این پروژه، با همکاری تیمی و با استفاده از ابزارهایی مانند تیلویند سی‌اس‌اس، جاوااسکریپت، فیگما، ترلو، گوگل میت و گیت‌هاب، رابط کاربری طراحی‌شده برای استودیو منابع انسانی کارجوپلاس را به طور کامل پیاده‌سازی کردم. نتیجه این همکاری، یک لندینگ حرفه‌ای و واکنش‌گرا برای معرفی خدمات و محصولات کارجوپلاس شد که نقش مهمی در جذب کارفرمایان و کارجویان دارد"
+
+
           },
         {
             "id": 2,
-            "name": "Clock",
-            "href": "https://maryaaama.github.io/clock/",
-            "imageSrc": "/img/clock1.jpg"
+            "name": "next-coffee",
+            "href": "https://maryaaama.github.io/next-coffee/",
+            "imageSrc": "/img/clock1.jpg",
+            "description": "در پروژه next-coffee، با استفاده از فریم‌ورک نکست‌جی‌اس و ابزار تیلویند سی‌اس‌اس، یک وب‌اپلیکیشن مدرن برای سفارش آنلاین قهوه پیاده‌سازی کرده‌ام. در این پروژه، قابلیت ثبت‌نام کاربر با استفاده از ابزار serverjson فراهم شده و کاربران می‌توانند پس از عضویت، سفارش خود را به صورت آنلاین ثبت کنند. تمامی بخش‌های رابط کاربری با بهره‌گیری از تیلویند سی‌اس‌اس طراحی و پیاده‌سازی شده است تا تجربه کاربری ساده و واکنش‌گرا ارائه شود."
         },
         {
             "id": 3,
             "name": "Dashbord",
             "href": "https://maryaaama.github.io/graphql-dashbord/",
-            "imageSrc": "/img/dashbord1.jpg"
+            "imageSrc": "/img/dashbord1.jpg",
+            "description": "در پروژه داشبورد با استفاده از ReactJS و ابزارهایی مانند Formik، Polaris Shopify، Yap، Apollo Client و GraphQL، بخش فرانت‌اند یک پلتفرم مدیریت شغل را پیاده‌سازی کردم. کاربران پس از ثبت‌نام و ورود، می‌توانند به عنوان کارفرما شغل ایجاد، ویرایش یا حذف کنند و لیست موقعیت‌های شغلی خود را در صفحه اختصاصی مشاهده نمایند. بک‌اند این پروژه توسط توسعه‌دهنده دیگر آماده شده است."
         },
         {
             "id": 4,
-            "name": "Random-quoter",
-            "href": "https://maryaaama.github.io/random-quote/",
-            "imageSrc": "/img/quote1.jpg"
-            
-          },
-        {
-            "id": 5,
-            "name": "Calculator",
-            "href": "https://maryaaama.github.io/calculator/",
-            "imageSrc": "/img/cal.jpg"
-        },
-        {
-            "id": 6,
-            "name": "Markdown-previewer",
-            "href": "https://maryaaama.github.io/markdown-previewer/",
-            "imageSrc": "/img/mark.jpg"
+            "name": "zamalaser",
+            "href": "https://zamalaser.ir",
+            "imageSrc": "/img/dashbord1.jpg",
+            "description": "در پروژه زامالیزر، طراحی کامل سایت با استفاده از وردپرس و صفحه‌ساز Elementor انجام شده است. قالب اولیه Astra و افزونه Bookly برای پیاده‌سازی سیستم نوبت‌دهی آنلاین کلینیک لیزر بدن زاما استفاده شده و تمامی تصاویر و بنرهای سایت توسط خودم طراحی و بارگذاری شده‌اند. این سایت مجهز به درگاه پرداخت آنلاین، پنل پیامکی و روی هاست اختصاصی دپلوی شده و شامل یک سال پشتیبانی پس از راه‌اندازی است."
         }
+        
         
     ]
 }

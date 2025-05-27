@@ -5,9 +5,9 @@ const rtl = require('tailwindcss-rtl');
 module.exports = {
   darkMode: 'class',
   content: [
-    "./pages/**/*.{js,ts,jsx,tsx}", // تمام فایل‌های صفحات
-    "./components/**/*.{js,ts,jsx,tsx}", // تمام فایل‌های کامپوننت‌ها
-    "./styles/**/*.css", // استایل‌های سفارشی
+    "./pages/**/*.{js,ts,jsx,tsx}",
+    "./components/**/*.{js,ts,jsx,tsx}",
+    "./styles/**/*.css",
   ],
   theme: {
     extend: {
@@ -17,5 +17,5 @@ module.exports = {
       },
     },
   },
-  plugins: [rtl], // فعال‌سازی RTL
+  plugins: [rtl],
 };

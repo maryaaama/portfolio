@@ -12,7 +12,11 @@ import  db from '/data/db.json';
 import { useTranslation } from 'react-i18next';
 import ThemeToggle from './components/ThemeToggle';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
-
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Navigation, Pagination } from 'swiper/modules';
+import "swiper/css";
+import "swiper/css/navigation";
+import styles from "/styles/Slider.module.css"
 export async function getServerSideProps({ locale }) {
   console.log(locale)
   return {
@@ -141,7 +145,7 @@ export default function Home() {
           </div>
          </div>
             <div className="flex flex-row items-center justify-center  lg:w-full w-11/12 py-16 dark:bg-gray-900 dark:text-white rtl:text-right">
-              <div className="flex flex-col items-start  ml-5 rtl:mr-5">
+              <div className="flex flex-col items-start  ml-10 rtl:mr-10">
               <h3 className="mb-3 lg:text-xl text-lg font-bold rtl:text-right rtl:font-IRANRounded">{t("I am")}</h3>
               <h1 className="lg:text-7xl text-xl  mb-3 font-bold rtl:text-right rtl:font-IRANRounded rtl:mb-6">{t("Maryam Alipour")}</h1>
               <h2 className="lg:text-4xl text-xl font-medium animate-pulse rtl:text-right rtl:font-IRANRounded mb-3 ">{t("Front End Developer")}</h2>
@@ -155,7 +159,7 @@ export default function Home() {
               </div>
               <div className="w-full max-w-[580px]  ">
                 <Image
-                  src="/img/ax111.png"
+                  src="/img/ax111.webp"
                   alt="My Image"
                   layout="responsive"
                   width={480}
@@ -166,12 +170,13 @@ export default function Home() {
             </div>
         
         </div>
-     {/* <div className="bg-slate-100 w-full flex flex-col items-center mb-10">
+{/*/////////////////////////////////////////////////////////////////*/}
+      <div className="bg-white w-full flex flex-col items-center mb-10">
        <div className="grid grid-cols-2 place-content-between w-7/12 my-5">
          <h1 className="text-5xl">My Servises</h1>
          <div className="justify-self-end"><a className="bg-[#eca348] p-4 rounded-lg text-white flex justify-center text-xl">Hire Me</a></div>
         </div>
-        /*<div className="grid grid-cols-1 gap-8 w-full max-w-7xl sm:grid-cols-2">
+         <div className="grid grid-cols-1 gap-8 w-full max-w-7xl sm:grid-cols-2">
 
           <div className="p-12 bg-white rounded-lg shadow hover:shadow-lg transition-shadow flex items-center">
             <div style={{backgroundImage: `url('img/Untitled.jpg')`}} className="mr-10 bg-no-repeat rounded-full">
@@ -180,10 +185,10 @@ export default function Home() {
              </svg>
             </div>
             <div>
-            <h2 className="mb-3 text-2xl font-bold">Creative Design</h2>
-            <span className="text-[#286eb4] text-xl">Start from $199</span>
+            <h2 className="mb-3 text-2xl font-bold"> WordPress Site Installation and Setup with Ready-Made Templates </h2>
+            <span className="text-[#286eb4] text-xl">Starting at 4,000,000 Toman</span>
             <p className="text-gray-700 mt-3">
-            Stet lorem dolor diam amet vero eos. No stet est diam amet diam ipsum. Clita dolor duo clita sit sed sit dolor eos..
+            Install WordPress and deploy a ready-made template on the client’s hosting, register a domain, perform the initial site setup, and provide free consultation to help choose the best template and hosting.
             </p>
             </div> 
            
@@ -196,10 +201,10 @@ export default function Home() {
            </svg>
            </div>  
            <div>
-            <h2 className="mb-3 text-2xl font-bold">Web Design</h2>
-            <span className="text-[#286eb4] text-xl">Start from $199</span>
+            <h2 className="mb-3 text-2xl font-bold">Professional WordPress Website Design </h2>
+            <span className="text-[#286eb4] text-xl">Starting at 7,000,000 Toman</span>
             <p className="text-gray-700 mt-3">
-            Stet lorem dolor diam amet vero eos. No stet est diam amet diam ipsum. Clita dolor duo clita sit sed sit dolor eos.
+            Design and launch a custom WordPress website, including domain registration, payment gateway integration, banner and image design, creation of five main pages based on client needs, adding custom images, SMS panel setup, obtaining e-trust certification, and free consultation throughout the design process.
             </p>
            </div>
           </div>
@@ -211,10 +216,10 @@ export default function Home() {
             </svg>
            </div> 
            <div>
-            <h2 className="mb-3 text-2xl font-bold">UI/UX Design</h2>
-            <span className="text-[#286eb4] text-xl">Start from $199</span>
+            <h2 className="mb-3 text-2xl font-bold"> UI Implementation and Coding</h2>
+            <span className="text-[#286eb4] text-xl">Starting at 10,000,000 Toman </span>
             <p className="text-gray-700 mt-3">
-            Stet lorem dolor diam amet vero eos. No stet est diam amet diam ipsum. Clita dolor duo clita sit sed sit dolor eos.
+            Implement and code website user interfaces using CSS, Tailwind CSS, and Bootstrap, ensuring fully responsive and professional layouts tailored to the client’s design and requirements.
             </p>
            </div> 
           </div>
@@ -226,67 +231,67 @@ export default function Home() {
             </svg>
            </div>
            <div> 
-            <h2 className="mb-3 text-2xl font-bold">Graphic Design</h2>
-            <span className="text-[#286eb4] text-xl">Start from $199</span>
+            <h2 className="mb-3 text-2xl font-bold">Front-End Development with ReactJS and Next.js</h2>
+            <span className="text-[#286eb4] text-xl">Starting at 20,000,000 Toman</span>
             <p className="text-gray-700 mt-3">
-            Stet lorem dolor diam amet vero eos. No stet est diam amet diam ipsum. Clita dolor duo clita sit sed sit dolor eos.
+            Develop all types of front-end projects using ReactJS, Next.js, and JavaScript, with teamwork capability, experience in working with various databases, and integrating with different APIs.
             </p>
            </div> 
           </div>
         </div>
-      </div> */}
-      <div className='lg:w-2/3 w-11/12 my-16 bg-gradient-to-r from-[#dbf7fa] via-[#61bbef] to-[#3f94ca] shadow-2xl shadow-[#0b2057] rounded-xl lg:p-20 p-5'>
-        <span className='lg:text-2xl text-xl mb-7'>{t("About Me")}</span>
-        <p className='lg:text-xl text-lg text-justify'>{t("My name is Maryam Alipour, a software engineer specializing in front-end development with a passion for learning computer sciences. Currently, I am available for remote work or project-based opportunities, and I can be present in Tehran for essential tasks or project deliveries. Alongside my technical expertise, I prioritize developing business skills, self-awareness, and understanding personality types to continually grow both professionally and personally.")}</p>
+      </div> 
+      <div className='lg:w-2/3 w-11/12 my-16 text-slate-800 bg-gradient-to-r from-[#dbf7fa] via-[#61bbef] to-[#3f94ca] shadow-2xl shadow-[#0b2057] rounded-xl lg:p-20 p-5'>
+        <span className='lg:text-2xl text-xl mb-10'>{t("About Me")}</span>
+        <p className='lg:text-xl text-lg text-justify mt-5'>{t("My name is Maryam Alipour, a software engineer specializing in front-end development with a passion for learning computer sciences. Currently, I am available for remote work or project-based opportunities, and I can be present in Tehran for essential tasks or project deliveries. Alongside my technical expertise, I prioritize developing business skills, self-awareness, and understanding personality types to continually grow both professionally and personally.")}</p>
       </div>
 
 
-      <div className="flex  flex-col lg:flex-row lg:justify-around justify-center lg:w-2/3 w-11/12 my-10">
-        <div className=" basis-full lg:basis-2/4 rtl:ml-10 ">
+      <div className="flex  flex-col lg:flex-row lg:gap-x-10 lg:justify-around justify-center lg:w-2/3 w-11/12 my-10">
+        <div className=" w-11/12 rtl:mr-5 ml-5 lg:w-1/2 lg:basis-2/4 mb-10 ">
           <h1 id='experience' className="lg:text-5xl text-2xl mb-12 rtl:text-center rtl:font-IRANRounded">{t("Skills & Experience")}</h1>
           <h3 id='Skills' className="lg:text-3xl text-xl rtl:text-right rtl:font-IRANRounded">{t("My Skills")}</h3>
           <div className="grid grid-cols-2 gap-4 mt-5">
           <div className="flex w-full flex-col gap-4">
             <div className="flex items-center justify-between">
-              <h6 className="lg:text-base text-xs">SQL</h6>
+              <h6 className="lg:text-base text-xs font-sans">SQL</h6>
               <span className="text-xs lg:text-base">50%</span>
             </div>
             <ProgressBar value={50} color="#8A2BE2" />
 
             <div className="flex items-center justify-between">
-              <h6 className="lg:text-base text-xs">TypeScript</h6>
+              <h6 className="lg:text-base text-xs font-sans">TypeScript</h6>
               <span className="text-xs lg:text-base">50%</span>
             </div>
             <ProgressBar value={50} color="#FFA500" />
 
             <div className="flex items-center justify-between">
-              <h6 className="lg:text-base text-xs">JavaScript</h6>
+              <h6 className="lg:text-base text-xs font-sans">JavaScript</h6>
               <span className="text-xs lg:text-base">90%</span>
             </div>
             <ProgressBar value={90} color="#0000FF" />
           </div>
           <div className="flex w-full flex-col gap-4">
             <div className="flex items-center justify-between">
-              <h6 className="lg:text-base text-xs">TailwindCSS</h6>
+              <h6 className="lg:text-base text-xs font-sans">TailwindCSS</h6>
               <span className="text-xs lg:text-base">85%</span>
             </div>
             <ProgressBar value={85} color="#286eb4" />
 
             <div className="flex items-center justify-between">
-              <h6 className="lg:text-base text-xs">Next.js</h6>
+              <h6 className="lg:text-base text-xs font-sans ">Next.js</h6>
               <span className="text-xs lg:text-base">65%</span>
             </div>
-            <ProgressBar value={65} color="black" />
+            <ProgressBar value={65} color="#fca5a5" />
 
             <div className="flex items-center justify-between">
-              <h6 className="lg:text-base text-xs">React.js</h6>
+              <h6 className="lg:text-base text-xs font-sans ">React.js</h6>
               <span className="text-xs lg:text-base">90%</span>
             </div>
             <ProgressBar value={90} color="#DC143C" />
           </div>
           </div>
         </div>
-        <div className="lg:ml-10 basis-full w-11/12  lg:w-1/2 lg:basis-2/4 mx-0 mt-8 lg:mt-0 ">
+        <div className="lg:ml-10 ml-4 rtl:mr-4 basis-full w-11/12  lg:w-1/2 lg:basis-2/4 mx-0 mt-8 lg:mt-0 ">
           <div className="grid grid-cols-2 place-content-stretch border-[#eca348] border-2 rounded-lg w-full ">
             <button
                className={`rtl:text-center rtl:font-IRANRounded lg:text-2xl text-lg py-4 ${activeTab === 'experience' ? 'bg-gradient-to-r from-[#eca348] to-[#ee9324] ' : ''}`}
@@ -353,52 +358,76 @@ export default function Home() {
            )}
         </div>
       </div>
+      {/*پروژه ها */}
+      <div id="Projects" className=" lg:w-2/3 w-11/12">
+        <h1 className="lg:text-5xl text-xl mb-10 rtl:text-right rtl:font-IRANRounded ml-9 lg:ml-0 rtl:mr-9">
+          {t("My Projects")}
+        </h1>
 
+        {/* بخش Swiper با حفظ استایل‌های قبلی */}
+      <div className="flex flex-wrap gap-6 items-stretch">
+        <Swiper
+          loop={true} // حالت بی‌پایان
+          navigation={true} // دکمه‌های ناوبری
+          modules={[Navigation]} // ماژول ناوبری
+          className={styles.swiper} 
+          direction="horizontal" 
+          spaceBetween={20} // فاصله بین اسلایدها
+         slidesPerView={1} // تعداد اسلایدها در هر لحظه
+         breakpoints={{
+          640: { slidesPerView: 1 }, // روی موبایل
+          768: { slidesPerView: 2 }, // روی تبلت
+          1024: { slidesPerView: 3 }, // روی دسکتاپ
+          }}
+      
+         pagination={{ clickable: true }}
+     
+    >
+          {db.projects.map((project) => (
+            <SwiperSlide key={project.id}>
+              <MyProject {...project} />
+            </SwiperSlide>
+         ))}
+       </Swiper>
+       </div>
+       </div>
 
-      <div id='Projects' className='my-10 lg:w-2/3 w-11/12'>
-          <h1 className='lg:text-5xl text-xl mb-10 rtl:text-right rtl:font-IRANRounded ml-9 lg:ml-0 rtl:mr-9'>{t("My Projects")}</h1>
-          <div className='grid grid-cols-2 lg:grid-cols-3 gap-5'>
-            {db.projects.map((project) => (
-               <MyProject key={project.id} {...project}/>
-             ))
-            }
-          </div>
-      </div>
-      <div className=' w-full flex justify-center'>
+      
+       <div className=' w-full flex justify-center'>
        <div className='grid grid-cols lg:w-1/2 w-full py-24 lg:py-32 ml-9 lg:ml-0 rtl:mr-9'>
         <div className='py-10'>
           <h1 className='lg:text-5xl text-xl rtl:text-right rtl:font-IRANRounded'>{t("Let's Work Together")}</h1>
           <div className='mt-16'>
             <p className='lg:text-xl text-lg text-slate-500 mb-5 rtl:text-right rtl:font-IRANRounded'>{t("Call me:")}</p>
             <h3 className='lg:text-3xl text-lg'>09193429924</h3>
-            <hr></hr>
+            <hr className='mr-9 rtl:mr-0'></hr>
           </div>
           <div className='mt-16'>
             <p className='lg:text-xl text-lg text-slate-500 mb-5 rtl:text-right rtl:font-IRANRounded'>{t("Mail me:")}</p>
             <h3 className='lg:text-3xl text-lg'>maryamalipour1901@gmail.com</h3>
-            <hr></hr>
+            <hr className='mr-9 rtl:mr-0'></hr>
           </div>
          <div className='mt-16'>
           <p className='text-xl text-slate-500 mb-7 rtl:font-IRANRounded'>Follow me:</p>
           <div className='flex'>
            <div className='bg-gradient-to-r via-40% via-[#f1d4ad] from-[#eca348] to-[#ee9324] rounded-lg shadow-lg shadow-slate-700 ring-2 ring-[#f5ad55] w-12 h-12 flex justify-center items-center mr-4'>
            <a href='https://github.com/maryaaama' target="_blank" rel="noopener noreferrer">
-           <img src='/img/github.png'/>
+           <img src='/img/github.png' alt='github'/>
            </a>
            </div>
            <div className='bg-gradient-to-r via-40% via-[#f1d4ad] from-[#eca348] to-[#f0890b] rounded-lg shadow-lg shadow-slate-700 ring-2 ring-[#f5ad55] w-12 h-12 flex justify-center items-center mr-4'>
            <a href='https://wa.me/9193429924?text=Hey%there%How’re%you%doing'target="_blank" rel="noopener noreferrer" >
-           <img src='/img/whatsapp.png'/>
+           <img src='/img/whatsapp.png' alt='whatsapp'/>
            </a>
            </div>
            <div className='bg-gradient-to-r via-40% via-[#f1d4ad] from-[#eca348] to-[#f0890b] rounded-lg shadow-lg shadow-slate-700 ring-2 ring-[#f5ad55] w-12 h-12 flex justify-center items-center mr-4'>
            <a href='https://www.linkedin.com/in/maryaaam-alipour-43a0a022b' target="_blank" rel="noopener noreferrer">
-          <img src='/img/linkdin.png'/>
+          <img src='/img/linkdin.png' alt='linkdin'/>
            </a>
            </div>
            <div className='bg-gradient-to-r via-40% via-[#f1d4ad] from-[#eca348] to-[#f0890b] rounded-lg shadow-lg shadow-slate-700 ring-2 ring-[#f5ad55] bg-blend-darken w-12 h-12 flex justify-center items-center mr-4'>
            <a href='https://t.me/maryaaamalipour' target="_blank" rel="noopener noreferrer">
-           <img src='/img/telegram.png'/>
+           <img src='/img/telegram.png' alt='telegram'/>
            </a>
            </div> 
           </div>
@@ -406,7 +435,7 @@ export default function Home() {
         </div>
        {/*<div><ContactUs/></div>*/} 
        </div>
-      </div>
+       </div>
       </main>
       
     </>

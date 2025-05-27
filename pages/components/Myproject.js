@@ -1,27 +1,60 @@
-import React from 'react';
+import React, { useState } from "react";
 import Image from 'next/image';
-const MyProject = ({ id, name, href, imageSrc }) => {
+import { useTranslation } from 'react-i18next';
+
+const MyProject = ({ id, name, href, imageSrc, description }) => {
+  const { t } = useTranslation("common");
+  const descriptionKey = typeof description === 'string'
+    ? description
+    : description?.key || '';
   return (
-    <div className="relative overflow-hidden border rounded-xl caret-black shadow-md group">
-      <h5 className='lg:text-lg text-xs ml-3 mt-1 rtl:text-center'>{name}</h5>
-      <Image
-        className="w-full h-auto transition-transform duration-500 hover:opacity-50 hover:blur-xl shadow-2xl shadow-[#0b2057] hover:-translate-y-1 hover:scale-110" 
-        src={imageSrc} 
-        alt={id} 
-        width={454} 
-        height={454}
-      />
-      <div className="w-14 h-14 absolute bottom-20 left-10 invisible group-hover:visible transition-transform duration-500 transform group-hover:translate-y-6 border-2 border-[#eca348] hover:bg-[#c48942] rounded-lg flex justify-center items-center">
-        
-        <a href={href} target="_blank" className="flex justify-center items-center ">
-          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-12 h-12 size-6">
-            <path strokeLinecap="round" strokeLinejoin="round" d="M2.036 12.322a1.012 1.012 0 0 1 0-.639C3.423 7.51 7.36 4.5 12 4.5c4.638 0 8.573 3.007 9.963 7.178.07.207.07.431 0 .639C20.577 16.49 16.64 19.5 12 19.5c-4.638 0-8.573-3.007-9.963-7.178Z" />
-            <path strokeLinecap="round" strokeLinejoin="round" d="M15 12a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
+    <div className="flex flex-col h-full max-w-sm bg-white border border-gray-200 rounded-lg shadow-sm dark:bg-gray-800 dark:border-gray-700 overflow-hidden">
+      <a href={href} target="_blank" rel="noopener noreferrer">
+        <div className="relative w-full h-56">
+          <Image
+            src={imageSrc}
+            alt={id}
+            fill
+            className="object-cover rounded-t-lg"
+            sizes="(max-width: 640px) 100vw, 454px"
+            priority
+          />
+        </div>
+      </a>
+      <div className="flex flex-col flex-1 p-5">
+        <a href={href} target="_blank" rel="noopener noreferrer">
+          <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
+            {name}
+          </h5>
+        </a>
+        <p className="mb-3 font-normal text-gray-700 dark:text-gray-400 text-justify flex-1">
+          {t(descriptionKey)}
+        </p>
+        <a
+          href={href}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 mt-auto"
+        >
+          {t("View project")}
+          <svg
+            className="rtl:rotate-180 w-3.5 h-3.5 ms-2"
+            aria-hidden="true"
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 14 10"
+          >
+            <path
+              stroke="currentColor"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth="2"
+              d="M1 5h12m0 0L9 1m4 4L9 9"
+            />
           </svg>
         </a>
       </div>
     </div>
   );
 };
-
 export default MyProject;
