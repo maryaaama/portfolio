@@ -1,6 +1,6 @@
 .swiper {
-  width: 100%;
- 
+  width: 95%;
+  padding: 0 40px; /* Add padding to keep arrows away from cards */
 }
 
 .swiper_slide {
