@@ -279,9 +279,9 @@ export default function Home() {
 
             <div className="flex items-center justify-between">
               <h6 className="lg:text-base text-xs font-sans ">Next.js</h6>
-              <span className="text-xs lg:text-base">65%</span>
+              <span className="text-xs lg:text-base">85%</span>
             </div>
-            <ProgressBar value={65} color="#fca5a5" />
+            <ProgressBar value={85} color="#fca5a5" />
 
             <div className="flex items-center justify-between">
               <h6 className="lg:text-base text-xs font-sans ">React.js</h6>
