@@ -170,6 +170,10 @@ export default function Home() {
             </div>
         
         </div>
+        <div className='lg:w-2/3 w-11/12 my-16 text-slate-800 bg-gradient-to-r from-[#dbf7fa] via-[#61bbef] to-[#3f94ca] shadow-2xl shadow-[#0b2057] rounded-xl lg:p-20 p-5'>
+          <span className='lg:text-2xl text-xl mb-10'>{t("About Me")}</span>
+          <p className='lg:text-xl text-lg text-justify mt-5'>{t("My name is Maryam Alipour, a software engineer with five years of experience designing websites. I specialize in front-end development and am proficient in tools and frameworks such as WordPress, React, and Next.js. I am available for remote or project-based work and excel in building responsive and user-friendly websites. Additionally, I enjoy collaborating with teams, and I am open to opportunities requiring teamwork or individual contributions. I am committed to continuous learning and personal growth, focusing on both technical and business skills to enhance my professional journey")}</p>
+        </div>
 {/*/////////////////////////////////////////////////////////////////*/}
       <div className="bg-white w-full flex flex-col items-center mb-10">
        <div className="grid grid-cols-2 place-content-between w-7/12 my-5">
@@ -240,10 +244,7 @@ export default function Home() {
           </div>
         </div>
       </div> 
-      <div className='lg:w-2/3 w-11/12 my-16 text-slate-800 bg-gradient-to-r from-[#dbf7fa] via-[#61bbef] to-[#3f94ca] shadow-2xl shadow-[#0b2057] rounded-xl lg:p-20 p-5'>
-        <span className='lg:text-2xl text-xl mb-10'>{t("About Me")}</span>
-        <p className='lg:text-xl text-lg text-justify mt-5'>{t("My name is Maryam Alipour, a software engineer with five years of experience designing websites. I specialize in front-end development and am proficient in tools and frameworks such as WordPress, React, and Next.js. I am available for remote or project-based work and excel in building responsive and user-friendly websites. Additionally, I enjoy collaborating with teams, and I am open to opportunities requiring teamwork or individual contributions. I am committed to continuous learning and personal growth, focusing on both technical and business skills to enhance my professional journey")}</p>
-      </div>
+      
 
 
       <div className="flex  flex-col lg:flex-row lg:gap-x-10 lg:justify-around justify-center lg:w-2/3 w-11/12 my-10">

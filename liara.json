@@ -1,4 +1,5 @@
 {
-    "app": "maryamalipour"
-  }
+    "app": "maryamalipour",
+     "port": 3000,
+    "region": "global"  }
   
