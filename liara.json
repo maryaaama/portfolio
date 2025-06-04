@@ -1,5 +1,8 @@
 {
     "app": "maryamalipour",
      "port": 3000,
-    "region": "global"  }
+    "region": "global" ,
+    "build": {
+     "location": "germany"
+  } }
   
