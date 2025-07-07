@@ -1,8 +1,8 @@
 {
-    "app": "maryamalipour",
-     "port": 3000,
-    "region": "global" ,
-    "build": {
-     "location": "germany"
-  } }
-  
+  "project": "maryamalipour",
+  "region": "germany",
+  "framework": "nextjs",
+  "build": {
+    "location": "germany"
+  }
+}
