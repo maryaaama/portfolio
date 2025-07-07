@@ -170,80 +170,78 @@ export default function Home() {
         </div>
         <div className='lg:w-2/3 w-11/12 my-16 text-slate-800 bg-gradient-to-r from-[#dbf7fa] via-[#61bbef] to-[#3f94ca] shadow-2xl shadow-[#0b2057] rounded-xl lg:p-20 p-5'>
           <span className='lg:text-2xl text-xl mb-10'>{t("About Me")}</span>
-          <p className='lg:text-xl text-lg text-justify mt-5'>{t("My name is Maryam Alipour, a software engineer with five years of experience designing websites. I specialize in front-end development and am proficient in tools and frameworks such as WordPress, React, and Next.js. I am available for remote or project-based work and excel in building responsive and user-friendly websites. Additionally, I enjoy collaborating with teams, and I am open to opportunities requiring teamwork or individual contributions. I am committed to continuous learning and personal growth, focusing on both technical and business skills to enhance my professional journey")}</p>
+          <p className='lg:text-xl text-lg text-justify mt-5'>{t("Intro_Long")}</p>
         </div>
-{/*/////////////////////////////////////////////////////////////////*/}
+     {/*/////////////////////////////////////////////////////////////////*/}
       <div className="bg-white w-full flex flex-col items-center mb-10">
        <div className="grid grid-cols-2 place-content-between w-7/12 my-5">
          <h1 className="text-5xl">{t("My Servises")}</h1>
-         <div className="justify-self-end"><a className="bg-[#eca348] p-4 rounded-lg text-white flex justify-center text-xl">{("Hire Me")}</a></div>
+        {/* <div className="justify-self-end"><a className="bg-[#eca348] p-4 rounded-lg text-white flex justify-center text-xl">{t("Hire Me")}</a></div>*/}
         </div>
          <div className="grid grid-cols-1 gap-8 w-full max-w-7xl sm:grid-cols-2">
 
           <div className="p-12 bg-white rounded-lg shadow hover:shadow-lg transition-shadow flex items-center">
-            <div style={{backgroundImage: `url('img/Untitled.jpg')`}} className="mr-10 bg-no-repeat rounded-full">
+            <div style={{backgroundImage: `url('img/Untitled.jpg')`}} className="mr-10 bg-no-repeat rounded-full rtl:ml-10">
              <svg xmlns="http://www.w3.org/2000/svg" className="h-14 w-14" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
               <path strokeLinecap="round" strokeLinejoin="round" d="M5 8h14M5 8a2 2 0 110-4h14a2 2 0 110 4M5 8v10a2 2 0 002 2h10a2 2 0 002-2V8m-9 4h4" />
              </svg>
             </div>
             <div>
-            <h2 className="mb-3 text-2xl font-bold"> {t("WordPress Site Installation and Setup with Ready-Made Templates")} </h2>
-            <span className="text-[#286eb4] text-xl">{t("Starting at 4,000,000 Toman")}</span>
+            <h2 className="mb-3 text-2xl font-bold"> {t("WordPress_Site_Installation")} </h2>
+            <span className="text-[#286eb4] text-xl">{t("Price_From_4Million")}</span>
             <p className="text-gray-700 mt-3">
-           {t("Install WordPress and deploy a ready-made template on the client’s hosting, register a domain, perform the initial site setup, and provide free consultation to help choose the best template and hosting")}
+             {t("Install_WordPress_Description")}
             </p>
             </div> 
            
           </div>
 
           <div className="p-12 bg-white rounded-lg shadow hover:shadow-lg transition-shadow flex items-center">
-          <div style={{backgroundImage: `url('img/Untitled.jpg')`}} className="mr-10 bg-no-repeat rounded-full">
+          <div style={{backgroundImage: `url('img/Untitled.jpg')`}} className="mr-10 bg-no-repeat rounded-full rtl:ml-10">
            <svg xmlns="http://www.w3.org/2000/svg" className="h-14 w-14" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
             <path strokeLinecap="round" strokeLinejoin="round" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
            </svg>
            </div>  
            <div>
-            <h2 className="mb-3 text-2xl font-bold">{t("Professional WordPress Website Design")} </h2>
-            <span className="text-[#286eb4] text-xl">{t("Starting at 7,000,000 Toman")}</span>
+            <h2 className="mb-3 text-2xl font-bold">{t("Professional_WordPress_Design")} </h2>
+            <span className="text-[#286eb4] text-xl">{t("Price_From_7Million")}</span>
             <p className="text-gray-700 mt-3">
-            {t("Design and launch a custom WordPress website, including domain registration, payment gateway integration, banner and image design, creation of five main pages based on client needs, adding custom images, SMS panel setup, obtaining e-trust certification, and free consultation throughout the design process")}
+            {t("Custom_WordPress_Description")}
             </p>
            </div>
           </div>
 
           <div className="p-12 bg-white rounded-lg shadow hover:shadow-lg transition-shadow flex items-center">
-          <div style={{backgroundImage: `url('img/Untitled.jpg')`}} className="mr-10 bg-no-repeat rounded-full">
+          <div style={{backgroundImage: `url('img/Untitled.jpg')`}} className="mr-10 bg-no-repeat rounded-full rtl:ml-10">
             <svg xmlns="http://www.w3.org/2000/svg" className="h-14 w-14" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
              <path strokeLinecap="round" strokeLinejoin="round" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
             </svg>
            </div> 
            <div>
-            <h2 className="mb-3 text-2xl font-bold">{t("UI Implementation and Coding")}</h2>
-            <span className="text-[#286eb4] text-xl">{t("Starting at 10,000,000 Toman")}</span>
+            <h2 className="mb-3 text-2xl font-bold">{t("UI_Implementation")}</h2>
+            <span className="text-[#286eb4] text-xl">{t("Price_From_10Million")}</span>
             <p className="text-gray-700 mt-3">
-            {t("Implement and code website user interfaces using CSS, Tailwind CSS, and Bootstrap, ensuring fully responsive and professional layouts tailored to the client’s design and requirements")}
+            {t("UI_Coding_Description")}
             </p>
            </div> 
           </div>
 
           <div className="p-12 bg-white rounded-lg shadow hover:shadow-lg transition-shadow flex items-center">
-          <div style={{backgroundImage: `url('img/Untitled.jpg')`}} className="mr-10 bg-no-repeat rounded-full">
+          <div style={{backgroundImage: `url('img/Untitled.jpg')`}} className="mr-10 bg-no-repeat rounded-full rtl:ml-10">
             <svg xmlns="http://www.w3.org/2000/svg" className="h-14 w-14" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
              <path strokeLinecap="round" strokeLinejoin="round" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
             </svg>
            </div>
            <div> 
-            <h2 className="mb-3 text-2xl font-bold">{t("Front-End Development with ReactJS and Next.js")}</h2>
-            <span className="text-[#286eb4] text-xl">{t("Starting at 20,000,000 Toman")}</span>
+            <h2 className="mb-3 text-2xl font-bold">{t("Frontend_Development")}</h2>
+            <span className="text-[#286eb4] text-xl">{t("Price_From_20Million")}</span>
             <p className="text-gray-700 mt-3">
-            {t("Develop all types of front-end projects using ReactJS, Next.js, and JavaScript, with teamwork capability, experience in working with various databases, and integrating with different APIs")}
+            {t("Frontend_Development_Description")}
             </p>
            </div> 
           </div>
         </div>
       </div> 
-      
-
 
       <div className="flex  flex-col lg:flex-row lg:gap-x-10 lg:justify-around justify-center lg:w-2/3 w-11/12 my-10">
         <div className=" w-11/12 rtl:mr-5 ml-5 lg:w-1/2 lg:basis-2/4 mb-10 ">
@@ -363,20 +361,20 @@ export default function Home() {
           {t("My Projects")}
         </h1>
 
-        {/* بخش Swiper با حفظ استایل‌های قبلی */}
+        {/* Swiper */}
       <div className="flex flex-wrap gap-6 items-stretch">
         <Swiper
-          loop={true} // حالت بی‌پایان
-          navigation={true} // دکمه‌های ناوبری
-          modules={[Navigation]} // ماژول ناوبری
+          loop={true} 
+          navigation={true} 
+          modules={[Navigation]} 
           className={styles.swiper} 
           direction="horizontal" 
-          spaceBetween={20} // فاصله بین اسلایدها
-         slidesPerView={1} // تعداد اسلایدها در هر لحظه
+          spaceBetween={20} 
+         slidesPerView={1} 
          breakpoints={{
-          640: { slidesPerView: 1 }, // روی موبایل
-          768: { slidesPerView: 2 }, // روی تبلت
-          1024: { slidesPerView: 3 }, // روی دسکتاپ
+          640: { slidesPerView: 1 }, 
+          768: { slidesPerView: 2 }, 
+          1024: { slidesPerView: 3 }, 
           }}
       
          pagination={{ clickable: true }}

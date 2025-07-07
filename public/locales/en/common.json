@@ -36,30 +36,24 @@
     "Software engineer":"Software engineer",
     "My Servises": "My Services",
     "Hire Me":"Hire Me",
-    "Install WordPress and deploy a ready-made template on the client’s hosting, register a domain, perform the initial site setup, and provide free consultation to help choose the best template and hosting": "Install WordPress and deploy a ready-made template on the client’s hosting, register a domain, perform the initial site setup, and provide free consultation to help choose the best template and hosting",
-    "Professional WordPress Website Design":"Professional WordPress Website Design",
-    "Starting at 7,000,000 Toman":"Starting at 7,000,000 Toman",
-    "Design and launch a custom WordPress website, including domain registration, payment gateway integration, banner and image design, creation of five main pages based on client needs, adding custom images, SMS panel setup, obtaining e-trust certification, and free consultation throughout the design process": "Design and launch a custom WordPress website, including domain registration, payment gateway integration, banner and image design, creation of five main pages based on client needs, adding custom images, SMS panel setup, obtaining e-trust certification, and free consultation throughout the design process",
-    "UI Implementation and Coding":"UI Implementation and Coding",
-    "Starting at 10,000,000 Toman":"Starting at 10,000,000 Toman",
-    "Implement and code website user interfaces using CSS, Tailwind CSS, and Bootstrap, ensuring fully responsive and professional layouts tailored to the client’s design and requirements": "Implement and code website user interfaces using CSS, Tailwind CSS, and Bootstrap, ensuring fully responsive and professional layouts tailored to the client’s design and requirements",
-    "Front-End Development with ReactJS and Next.js":"Front-End Development with ReactJS and Next.js",
-    "Starting at 20,000,000 Toman":"Starting at 20,000,000 Toman",
-    "Develop all types of front-end projects using ReactJS, Next.js, and JavaScript, with teamwork capability, experience in working with various databases, and integrating with different APIs": "Develop all types of front-end projects using ReactJS, Next.js, and JavaScript, with teamwork capability, experience in working with various databases, and integrating with different APIs",
-    "In this project, through effective teamwork and using tools such as Tailwind CSS, JavaScript, Figma, Trello, Google Meet, and GitHub, I fully implemented the user interface designed for Karjoo+ Human Resources Studio. The result of this collaboration is a professional and responsive landing page that introduces Karjoo+ services and products and plays an important role in attracting employers and job seekers.": "In this project, through effective teamwork and using tools such as Tailwind CSS, JavaScript, Figma, Trello, Google Meet, and GitHub, I fully implemented the user interface designed for Karjoo+ Human Resources Studio. The result of this collaboration is a professional and responsive landing page that introduces Karjoo+ services and products and plays an important role in attracting employers and job seekers.",
-   
-    "WordPress Site Installation and Setup with Ready-Made Templates": "WordPress Site Installation and Setup with Ready-Made Templates",
-    "Starting at 4,000,000 Toman": "Starting at 4,000,000 Toman",   
-  
-  "karjooDescription": "In this project, I collaborated with a team using tools like Tailwind CSS, JavaScript, Figma, Trello, Google Meet, and GitHub to fully implement the designed UI for the KarjooPlus human resources studio. The result of this teamwork was a professional, responsive landing page that effectively showcases the services and products of KarjooPlus, playing an important role in attracting both employers and job seekers.",
-  
-  "nextCoffeeDescription": "In the next-coffee project, I developed a modern web application for online coffee ordering using the Next.js framework and Tailwind CSS. The project includes user registration using JSON Server, allowing users to sign up and place their orders online. All UI components were designed and implemented with Tailwind CSS to ensure a clean, responsive, and user-friendly experience.",
-  
-  "dashboardDescription": "In this dashboard project, I implemented the frontend of a job management platform using ReactJS and tools like Formik, Shopify Polaris, Yap, Apollo Client, and GraphQL. After signing up and logging in, users (as employers) can create, edit, and delete job listings and view them on their dedicated dashboard. The backend was developed by another developer.",
-  
-  "zamalaserDescription": "In the ZamaLaser project, I fully designed and built the website using WordPress and the Elementor page builder. The Astra theme and Bookly plugin were used to implement the online appointment booking system for the laser clinic. All site images and banners were designed and uploaded by me. The website includes online payment, SMS panel integration, is deployed on a dedicated host, and includes one year of post-launch support.",
-  
-  "View project": "View project"
-
-
+    "WordPress_Site_Installation": "WordPress Site Installation and Setup with Ready-Made Templates",
+    "Price_From_4Million": "Starting at 4,000,000 Toman",
+    "Install_WordPress_Description": "Install WordPress and deploy a ready-made template on the client’s hosting, register a domain, perform the initial site setup, and provide free consultation to help choose the best template and hosting",
+    "Professional_WordPress_Design": "Professional WordPress Website Design",
+    "Price_From_7Million": "Starting at 7,000,000 Toman",
+    "Custom_WordPress_Description": "Design and launch a custom WordPress website, including domain registration, payment gateway integration, banner and image design, creation of five main pages based on client needs, adding custom images, SMS panel setup, obtaining e-trust certification, and free consultation throughout the design process",
+    "UI_Implementation": "UI Implementation and Coding",
+    "Price_From_10Million": "Starting at 10,000,000 Toman",
+    "UI_Coding_Description": "Implement and code website user interfaces using CSS, Tailwind CSS, and Bootstrap, ensuring fully responsive and professional layouts tailored to the client’s design and requirements",
+    "Frontend_Development": "Front-End Development with ReactJS and Next.js",
+    "Price_From_20Million": "Starting at 20,000,000 Toman",
+    "Frontend_Development_Description": "Develop all types of front-end projects using ReactJS, Next.js, and JavaScript, with teamwork capability, experience in working with various databases, and integrating with different APIs",
+    "Karjoo_Project_Description": "In this project, through effective teamwork and using tools such as Tailwind CSS, JavaScript, Figma, Trello, Google Meet, and GitHub, I fully implemented the user interface designed for Karjoo+ Human Resources Studio. The result of this collaboration is a professional and responsive landing page that introduces Karjoo+ services and products and plays an important role in attracting employers and job seekers.",
+    "Intro_Short": "My name is Maryam Alipour, a software engineer specializing in front-end development with a passion for learning computer sciences. Currently, I am available for remote work or project-based opportunities, and I can be present in Tehran for essential tasks or project deliveries. Alongside my technical expertise, I prioritize developing business skills, self-awareness, and understanding personality types to continually grow both professionally and personally.",
+    "Intro_Long": "My name is Maryam Alipour, a software engineer with five years of experience designing websites. I specialize in front-end development and am proficient in tools and frameworks such as WordPress, React, and Next.js. I am available for remote or project-based work and excel in building responsive and user-friendly websites. Additionally, I enjoy collaborating with teams, and I am open to opportunities requiring teamwork or individual contributions. I am committed to continuous learning and personal growth, focusing on both technical and business skills to enhance my professional journey.",
+    "karjooDescription": "In this project, I collaborated with a team using tools like Tailwind CSS, JavaScript, Figma, Trello, Google Meet, and GitHub to fully implement the designed UI for the KarjooPlus human resources studio. The result of this teamwork was a professional, responsive landing page that effectively showcases the services and products of KarjooPlus, playing an important role in attracting both employers and job seekers.",
+    "nextCoffeeDescription": "In the next-coffee project, I developed a modern web application for online coffee ordering using the Next.js framework and Tailwind CSS. The project includes user registration using JSON Server, allowing users to sign up and place their orders online. All UI components were designed and implemented with Tailwind CSS to ensure a clean, responsive, and user-friendly experience.",
+    "dashboardDescription": "In this dashboard project, I implemented the frontend of a job management platform using ReactJS and tools like Formik, Shopify Polaris, Yap, Apollo Client, and GraphQL. After signing up and logging in, users (as employers) can create, edit, and delete job listings and view them on their dedicated dashboard. The backend was developed by another developer.",
+    "zamalaserDescription": "In the ZamaLaser project, I fully designed and built the website using WordPress and the Elementor page builder. The Astra theme and Bookly plugin were used to implement the online appointment booking system for the laser clinic. All site images and banners were designed and uploaded by me. The website includes online payment, SMS panel integration, is deployed on a dedicated host, and includes one year of post-launch support.",
+    "View project": "View project"
   }
