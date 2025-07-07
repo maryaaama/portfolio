@@ -1,8 +1,8 @@
 {
   "project": "maryamalipour",
-  "region": "germany",
+  "region": "iran",
   "framework": "nextjs",
   "build": {
-    "location": "germany"
+    "location": "iran"
   }
 }
