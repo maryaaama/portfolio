@@ -9,7 +9,7 @@ import { Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/react';
 import ProgressBar from './components/ProgressBar.js';
 import MyProject from './components/Myproject.js';
 import  db from '/data/db.json';
-import { useTranslation } from 'react-i18next';
+import { useTranslation } from 'next-i18next';
 import ThemeToggle from './components/ThemeToggle';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import { Swiper, SwiperSlide } from 'swiper/react';
@@ -17,12 +17,10 @@ import { Navigation, Pagination } from 'swiper/modules';
 import "swiper/css";
 import "swiper/css/navigation";
 import styles from "/styles/Slider.module.css"
-export async function getServerSideProps({ locale }) {
-  console.log(locale)
+export async function getStaticProps({ locale }) {
   return {
     props: {
-      ...(await serverSideTranslations(locale, ['common'])), 
-      
+      ...(await serverSideTranslations(locale, ['common'])),
     },
   };
 }
@@ -177,8 +175,8 @@ export default function Home() {
 {/*/////////////////////////////////////////////////////////////////*/}
       <div className="bg-white w-full flex flex-col items-center mb-10">
        <div className="grid grid-cols-2 place-content-between w-7/12 my-5">
-         <h1 className="text-5xl">My Servises</h1>
-         <div className="justify-self-end"><a className="bg-[#eca348] p-4 rounded-lg text-white flex justify-center text-xl">Hire Me</a></div>
+         <h1 className="text-5xl">{t("My Servises")}</h1>
+         <div className="justify-self-end"><a className="bg-[#eca348] p-4 rounded-lg text-white flex justify-center text-xl">{("Hire Me")}</a></div>
         </div>
          <div className="grid grid-cols-1 gap-8 w-full max-w-7xl sm:grid-cols-2">
 
@@ -189,10 +187,10 @@ export default function Home() {
              </svg>
             </div>
             <div>
-            <h2 className="mb-3 text-2xl font-bold"> WordPress Site Installation and Setup with Ready-Made Templates </h2>
-            <span className="text-[#286eb4] text-xl">Starting at 4,000,000 Toman</span>
+            <h2 className="mb-3 text-2xl font-bold"> {t("WordPress Site Installation and Setup with Ready-Made Templates")} </h2>
+            <span className="text-[#286eb4] text-xl">{t("Starting at 4,000,000 Toman")}</span>
             <p className="text-gray-700 mt-3">
-            Install WordPress and deploy a ready-made template on the client’s hosting, register a domain, perform the initial site setup, and provide free consultation to help choose the best template and hosting.
+           {t("Install WordPress and deploy a ready-made template on the client’s hosting, register a domain, perform the initial site setup, and provide free consultation to help choose the best template and hosting")}
             </p>
             </div> 
            
@@ -205,10 +203,10 @@ export default function Home() {
            </svg>
            </div>  
            <div>
-            <h2 className="mb-3 text-2xl font-bold">Professional WordPress Website Design </h2>
-            <span className="text-[#286eb4] text-xl">Starting at 7,000,000 Toman</span>
+            <h2 className="mb-3 text-2xl font-bold">{t("Professional WordPress Website Design")} </h2>
+            <span className="text-[#286eb4] text-xl">{t("Starting at 7,000,000 Toman")}</span>
             <p className="text-gray-700 mt-3">
-            Design and launch a custom WordPress website, including domain registration, payment gateway integration, banner and image design, creation of five main pages based on client needs, adding custom images, SMS panel setup, obtaining e-trust certification, and free consultation throughout the design process.
+            {t("Design and launch a custom WordPress website, including domain registration, payment gateway integration, banner and image design, creation of five main pages based on client needs, adding custom images, SMS panel setup, obtaining e-trust certification, and free consultation throughout the design process")}
             </p>
            </div>
           </div>
@@ -220,10 +218,10 @@ export default function Home() {
             </svg>
            </div> 
            <div>
-            <h2 className="mb-3 text-2xl font-bold"> UI Implementation and Coding</h2>
-            <span className="text-[#286eb4] text-xl">Starting at 10,000,000 Toman </span>
+            <h2 className="mb-3 text-2xl font-bold">{t("UI Implementation and Coding")}</h2>
+            <span className="text-[#286eb4] text-xl">{t("Starting at 10,000,000 Toman")}</span>
             <p className="text-gray-700 mt-3">
-            Implement and code website user interfaces using CSS, Tailwind CSS, and Bootstrap, ensuring fully responsive and professional layouts tailored to the client’s design and requirements.
+            {t("Implement and code website user interfaces using CSS, Tailwind CSS, and Bootstrap, ensuring fully responsive and professional layouts tailored to the client’s design and requirements")}
             </p>
            </div> 
           </div>
@@ -235,10 +233,10 @@ export default function Home() {
             </svg>
            </div>
            <div> 
-            <h2 className="mb-3 text-2xl font-bold">Front-End Development with ReactJS and Next.js</h2>
-            <span className="text-[#286eb4] text-xl">Starting at 20,000,000 Toman</span>
+            <h2 className="mb-3 text-2xl font-bold">{t("Front-End Development with ReactJS and Next.js")}</h2>
+            <span className="text-[#286eb4] text-xl">{t("Starting at 20,000,000 Toman")}</span>
             <p className="text-gray-700 mt-3">
-            Develop all types of front-end projects using ReactJS, Next.js, and JavaScript, with teamwork capability, experience in working with various databases, and integrating with different APIs.
+            {t("Develop all types of front-end projects using ReactJS, Next.js, and JavaScript, with teamwork capability, experience in working with various databases, and integrating with different APIs")}
             </p>
            </div> 
           </div>
