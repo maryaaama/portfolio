@@ -2,11 +2,20 @@ import React, { useState } from "react";
 import Image from 'next/image';
 import { useTranslation } from 'next-i18next';
 
-const MyProject = ({ id, name, href, imageSrc, description }) => {
+const Project = ({ id, name, href, imageSrc, description }) => {
   const { t } = useTranslation("common");
   const descriptionKey = typeof description === 'string'
     ? description
     : description?.key || '';
+
+  // اضافه کردن state برای نمایش بیشتر متن
+  const [showMore, setShowMore] = useState(false);
+
+  // متن کوتاه برای موبایل
+  const shortText = t(descriptionKey).length > 80 
+    ? t(descriptionKey).slice(0, 80) + "..." 
+    : t(descriptionKey);
+
   return (
     <div className="flex flex-col h-full max-w-sm bg-white border border-gray-200 rounded-lg shadow-sm dark:bg-gray-800 dark:border-gray-700 overflow-hidden">
       <a href={href} target="_blank" rel="noopener noreferrer">
@@ -23,13 +32,25 @@ const MyProject = ({ id, name, href, imageSrc, description }) => {
       </a>
       <div className="flex flex-col flex-1 p-5">
         <a href={href} target="_blank" rel="noopener noreferrer">
-          <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
+          <h5 className="mb-2 text-2xl font-bold tracking-normal text-gray-900 dark:text-white break-words">
             {name}
           </h5>
         </a>
-        <p className="mb-3 font-normal text-gray-700 dark:text-gray-400 text-justify flex-1">
-          {t(descriptionKey)}
-        </p>
+        <p className="mb-3 font-normal text-gray-700 dark:text-gray-400 text-justify flex-1 break-words whitespace-normal">
+            {showMore ? t(descriptionKey) : shortText}
+            {t(descriptionKey).length > 80 && !showMore && (
+              <span
+                className="text-blue-600 cursor-pointer ms-1"
+                onClick={(e) => {
+                  e.preventDefault();
+                  setShowMore(true);
+                }}
+              >
+                ...
+              </span>
+            )}
+          </p>
+
         <a
           href={href}
           target="_blank"
@@ -57,4 +78,5 @@ const MyProject = ({ id, name, href, imageSrc, description }) => {
     </div>
   );
 };
-export default MyProject;
+
+export default Project;

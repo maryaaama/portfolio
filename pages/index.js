@@ -7,7 +7,6 @@ import Image from "next/image";
 import LanguageSwitcher from "./components/LanguageSwitcher";
 import { Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/react';
 import ProgressBar from './components/ProgressBar.js';
-import MyProject from './components/Myproject.js';
 import  db from '/data/db.json';
 import { useTranslation } from 'next-i18next';
 import ThemeToggle from './components/ThemeToggle';
@@ -16,7 +15,11 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Pagination } from 'swiper/modules';
 import "swiper/css";
 import "swiper/css/navigation";
-import styles from "/styles/Slider.module.css"
+import styles from "/styles/Slider.module.css";
+import ProjectVideoGallery from "./components/ProjectVideoGallery"
+import Services from './components/services';
+import Project from "./components/project";
+
 export async function getStaticProps({ locale }) {
   return {
     props: {
@@ -67,182 +70,94 @@ export default function Home() {
            crossOrigin="anonymous"
          />
       </Head>
-      <main className="flex flex-col items-center dark:bg-gray-900 dark:text-white">
-        <div  style={{
-           backgroundImage,
-           }} className="bg-fixed bg-cover bg-no-repeat relative h-full w-full rtl:bg-right">
-        <div className=" z-10 sticky flex items-center justify-between w-full backdrop-contrast-50 lg:p-2 p-0 bg-gray-100 dark:bg-gray-800  shadow-lg">
-         <div className="flex items-center lg:space-x-4 space-x-2 rtl:space-x-reverse">
-           <p className="lg:text-lg text-base text-slate-600 dark:text-slate-200 rtl:text-right ml-2 rtl:mr-2 rtl:font-IRANRounded">
+      <main className="flex flex-col items-center dark:bg-gray-900 dark:text-white ">
+     {/* <div style={{ backgroundImage }} className="bg-fixed bg-cover bg-no-repeat relative h-full w-full rtl:bg-right">
+    
+     Navbar */}
+    <div className="z-10 sticky w-full backdrop-contrast-50 lg:p-2 p-0 bg-gray-100 dark:bg-gray-900 shadow-lg">
+      <div className="flex justify-between items-center w-11/12 lg:w-2/3 mx-auto ">
+        {/* سمت چپ */}
+        <div className="flex items-center space-x-2 lg:space-x-4 rtl:space-x-reverse">
+          <p className="lg:text-lg text-base text-slate-600 dark:text-slate-200 rtl:font-IRANRounded">
             {t("maryam alipour")}
-           </p>
-           <LanguageSwitcher/>
-         </div>
-          <div className="flex items-center  lg:space-x-4 space-x-0 rtl:space-x-reverse">
-          <ThemeToggle/>
-          <div className="lg:hidden relative flex justify-center mx-0 pr-2 rtl:pl-2">
-           <Menu>
-            <MenuButton className="text-slate-600 dark:text-slate-100">
-              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
-              <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
-              </svg>
-            </MenuButton>
-            <MenuItems
-             anchor="bottom"
-             className="absolute z-50 bg-white dark:bg-gray-900 top-full mt-2 w-40 shadow-lg rounded-md"
-             style={{
-              left: isRtl ? '0' : 'auto',
-              right: !isRtl ? '0' : 'auto',
-              }}
-            >
-           <MenuItem>
-            <a className="block px-4 py-2 data-[focus]:bg-blue-100 dark:data-[focus]:bg-blue-700 rtl:text-left rtl:font-IRANRounded text-xs" href="#experience">
-              {t("Experience")}
-            </a>
-           </MenuItem>
-           <MenuItem>
-            <a className="block px-4 py-2 data-[focus]:bg-blue-100 dark:data-[focus]:bg-blue-700 rtl:text-left rtl:font-IRANRounded text-xs" href="#Skills">
-              {t("Skills")}
-            </a>
-           </MenuItem>
-           <MenuItem>
-            <a className="block px-4 py-2 data-[focus]:bg-blue-100 dark:data-[focus]:bg-blue-700 rtl:text-left rtl:font-IRANRounded text-xs" href="#projects">
-              {t("Projects")}
-            </a>
-            </MenuItem>
-            </MenuItems>
-           </Menu>
-          </div>
-          <div className="lg:flex justify-between hidden  ">
-       
-           <div className="mr-5 rtl:ml-5">
-            <a
-              href="#experience"
-              className="flex items-center"
-            >
-              <h1 className="text-slate-600 rtl:text-left rtl:font-IRANRounded">{t("Experience")}</h1>
-            </a>
-          </div>
-          <div className="mr-5 rtl:ml-5">
-            <a
-              href="#Skills"
-              className="flex items-center"
-            >
-              <h1 className="text-slate-600 rtl:text-left rtl:font-IRANRounded">{t("Skills")}</h1>
-            </a>
-          </div>
-          <div className="mr-5 rtl:ml-5">
-            <a
-              href="#Projects"
-              className="flex items-center"
-            >
-              <h1 className="text-slate-600 rtl:text-left rtl:font-IRANRounded ">{t("Projects")}</h1>
-            </a>
-          </div>
-          </div>
-          </div>
-         </div>
-            <div className="flex flex-row items-center justify-center  lg:w-full w-11/12 py-16 dark:bg-gray-900 dark:text-white rtl:text-right">
-              <div className="flex flex-col items-start  ml-10 rtl:mr-10">
-              <h3 className="mb-3 lg:text-xl text-lg font-bold rtl:text-right rtl:font-IRANRounded">{t("I am")}</h3>
-              <h1 className="lg:text-7xl text-xl  mb-3 font-bold rtl:text-right rtl:font-IRANRounded rtl:mb-6">{t("Maryam Alipour")}</h1>
-              <h2 className="lg:text-4xl text-xl font-medium animate-pulse rtl:text-right rtl:font-IRANRounded mb-3 ">{t("Front End Developer")}</h2>
-              <h2 className="lg:text-4xl text-xl font-medium animate-pulse rtl:text-right rtl:font-IRANRounded ">{t("Software engineer")}</h2>
-              <div className="flex mt-3">
-               <a href="/Maryam Alipour_1403-9-5-1-1.pdf" 
-                 target="_blank" 
-                 rel="noopener noreferrer" 
-                 className="bg-gradient-to-r from-[#eca348] to-[#ee9324] p-4 rounded-lg text-white lg:text-xl text-xs ease-in duration-300 rtl:text-left  rtl:font-IRANRounded">{t("Download CV")}</a>
-              </div>
-              </div>
-              <div className="w-full max-w-[580px]  ">
-                <Image
-                  src="/img/ax111.webp"
-                  alt="My Image"
-                  layout="responsive"
-                  width={480}
-                  height={480}
-                  priority
-                />
-              </div>
-            </div>
-        
+          </p>
+          <LanguageSwitcher />
         </div>
+        {/* سمت راست */}
+        <div className="flex items-center space-x-0 lg:space-x-4 rtl:space-x-reverse ">
+          <ThemeToggle />
+          {/* موبایل منو */}
+          <div className="lg:hidden relative flex justify-center">
+            <Menu>
+              <MenuButton className="text-slate-600 dark:text-slate-100">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+                </svg>
+              </MenuButton>
+              <MenuItems className="absolute z-50 bg-white dark:bg-gray-900 top-full mt-2 w-40 shadow-lg rounded-md">
+                <MenuItem>
+                  <a className="block px-4 py-2 data-[focus]:bg-blue-100 dark:data-[focus]:bg-blue-700 dark:text-slate-200 rtl:text-left rtl:font-IRANRounded text-xs" href="#experience">{t("Experience")}</a>
+                </MenuItem>
+                <MenuItem>
+                  <a className="block px-4 py-2 data-[focus]:bg-blue-100 dark:data-[focus]:bg-blue-700 dark:text-slate-200 rtl:text-left rtl:font-IRANRounded text-xs" href="#Skills">{t("Skills")}</a>
+                </MenuItem>
+                <MenuItem>
+                  <a className="block px-4 py-2 data-[focus]:bg-blue-100 dark:data-[focus]:bg-blue-700 dark:text-slate-200 rtl:text-left rtl:font-IRANRounded text-xs" href="#projects">{t("Projects")}</a>
+                </MenuItem>
+              </MenuItems>
+            </Menu>
+          </div>
+          {/* دسکتاپ لینک‌ها */}
+          <div className="hidden lg:flex space-x-5 rtl:space-x-reverse">
+            <a href="#experience" className="text-slate-600 rtl:font-IRANRounded dark:text-slate-200">{t("Experience")}</a>
+            <a href="#Skills" className="text-slate-600 rtl:font-IRANRounded dark:text-slate-200">{t("Skills")}</a>
+            <a href="#Projects" className="text-slate-600 rtl:font-IRANRounded dark:text-slate-200">{t("Projects")}</a>
+          </div>
+        </div>
+      </div>
+        {/* </div> background*/}
+    </div>
+     {/* Hero Section */}
+     <div className="flex flex-col lg:flex-row items-center justify-center w-11/12 mx-auto py-16 bg-white dark:bg-gray-900 dark:text-white rtl:text-right">
+      {/* متن */}
+      <div className="flex flex-col items-start lg:mr-10 rtl:ml-10">
+        <h3 className="mb-3 lg:text-xl text-lg font-bold rtl:font-IRANRounded">{t("I am")}</h3>
+        <h1 className="lg:text-7xl text-xl mb-3 font-bold rtl:font-IRANRounded rtl:mb-6">{t("Maryam Alipour")}</h1>
+        <h2 className="lg:text-4xl text-xl font-medium animate-pulse rtl:font-IRANRounded mb-3">{t("Front End Developer")}</h2>
+        <h2 className="lg:text-4xl text-xl font-medium animate-pulse rtl:font-IRANRounded">{t("Software engineer")}</h2>
+        <div className="flex mt-3">
+          <a
+            href="/Maryam Alipour_1403-9-5-1-1.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="bg-gradient-to-r from-[#eca348] to-[#ee9324] p-4 rounded-lg text-white lg:text-xl text-xs ease-in duration-300 rtl:font-IRANRounded"
+          >
+            {t("Download CV")}
+          </a>
+        </div>
+      </div>
+
+      {/* تصویر */}
+      <div className="w-full max-w-[580px] mt-10 lg:mt-0">
+        <Image
+          src="/img/ax111.webp"
+          alt="My Image"
+          layout="responsive"
+          width={480}
+          height={480}
+          priority
+        />
+      </div>
+
+     </div>
+       {/*/////////////////////////////////////////////////////////////////*/} 
         <div className='lg:w-2/3 w-11/12 my-16 text-slate-800 bg-gradient-to-r from-[#dbf7fa] via-[#61bbef] to-[#3f94ca] shadow-2xl shadow-[#0b2057] rounded-xl lg:p-20 p-5'>
           <span className='lg:text-2xl text-xl mb-10'>{t("About Me")}</span>
           <p className='lg:text-xl text-lg text-justify mt-5'>{t("Intro_Long")}</p>
         </div>
-     {/*/////////////////////////////////////////////////////////////////*/}
-      <div className="bg-white w-full flex flex-col items-center mb-10">
-       <div className="grid grid-cols-2 place-content-between w-7/12 my-5">
-         <h1 className="text-5xl">{t("My Servises")}</h1>
-        {/* <div className="justify-self-end"><a className="bg-[#eca348] p-4 rounded-lg text-white flex justify-center text-xl">{t("Hire Me")}</a></div>*/}
-        </div>
-         <div className="grid grid-cols-1 gap-8 w-full max-w-7xl sm:grid-cols-2">
-
-          <div className="p-12 bg-white rounded-lg shadow hover:shadow-lg transition-shadow flex items-center">
-            <div style={{backgroundImage: `url('img/Untitled.jpg')`}} className="mr-10 bg-no-repeat rounded-full rtl:ml-10">
-             <svg xmlns="http://www.w3.org/2000/svg" className="h-14 w-14" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-              <path strokeLinecap="round" strokeLinejoin="round" d="M5 8h14M5 8a2 2 0 110-4h14a2 2 0 110 4M5 8v10a2 2 0 002 2h10a2 2 0 002-2V8m-9 4h4" />
-             </svg>
-            </div>
-            <div>
-            <h2 className="mb-3 text-2xl font-bold"> {t("WordPress_Site_Installation")} </h2>
-            <span className="text-[#286eb4] text-xl">{t("Price_From_4Million")}</span>
-            <p className="text-gray-700 mt-3">
-             {t("Install_WordPress_Description")}
-            </p>
-            </div> 
-           
-          </div>
-
-          <div className="p-12 bg-white rounded-lg shadow hover:shadow-lg transition-shadow flex items-center">
-          <div style={{backgroundImage: `url('img/Untitled.jpg')`}} className="mr-10 bg-no-repeat rounded-full rtl:ml-10">
-           <svg xmlns="http://www.w3.org/2000/svg" className="h-14 w-14" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-            <path strokeLinecap="round" strokeLinejoin="round" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
-           </svg>
-           </div>  
-           <div>
-            <h2 className="mb-3 text-2xl font-bold">{t("Professional_WordPress_Design")} </h2>
-            <span className="text-[#286eb4] text-xl">{t("Price_From_7Million")}</span>
-            <p className="text-gray-700 mt-3">
-            {t("Custom_WordPress_Description")}
-            </p>
-           </div>
-          </div>
-
-          <div className="p-12 bg-white rounded-lg shadow hover:shadow-lg transition-shadow flex items-center">
-          <div style={{backgroundImage: `url('img/Untitled.jpg')`}} className="mr-10 bg-no-repeat rounded-full rtl:ml-10">
-            <svg xmlns="http://www.w3.org/2000/svg" className="h-14 w-14" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-             <path strokeLinecap="round" strokeLinejoin="round" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-            </svg>
-           </div> 
-           <div>
-            <h2 className="mb-3 text-2xl font-bold">{t("UI_Implementation")}</h2>
-            <span className="text-[#286eb4] text-xl">{t("Price_From_10Million")}</span>
-            <p className="text-gray-700 mt-3">
-            {t("UI_Coding_Description")}
-            </p>
-           </div> 
-          </div>
-
-          <div className="p-12 bg-white rounded-lg shadow hover:shadow-lg transition-shadow flex items-center">
-          <div style={{backgroundImage: `url('img/Untitled.jpg')`}} className="mr-10 bg-no-repeat rounded-full rtl:ml-10">
-            <svg xmlns="http://www.w3.org/2000/svg" className="h-14 w-14" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-             <path strokeLinecap="round" strokeLinejoin="round" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
-            </svg>
-           </div>
-           <div> 
-            <h2 className="mb-3 text-2xl font-bold">{t("Frontend_Development")}</h2>
-            <span className="text-[#286eb4] text-xl">{t("Price_From_20Million")}</span>
-            <p className="text-gray-700 mt-3">
-            {t("Frontend_Development_Description")}
-            </p>
-           </div> 
-          </div>
-        </div>
-      </div> 
-
+       {/*/////////////////////////////////////////////////////////////////*/}
+       <Services/>
+       <ProjectVideoGallery/>
       <div className="flex  flex-col lg:flex-row lg:gap-x-10 lg:justify-around justify-center lg:w-2/3 w-11/12 my-10">
         <div className=" w-11/12 rtl:mr-5 ml-5 lg:w-1/2 lg:basis-2/4 mb-10 ">
           <h1 id='experience' className="lg:text-5xl text-2xl mb-12 rtl:text-center rtl:font-IRANRounded">{t("Skills & Experience")}</h1>
@@ -356,40 +271,38 @@ export default function Home() {
         </div>
       </div>
       {/*پروژه ها */}
-      <div id="Projects" className=" lg:w-2/3 w-11/12">
-        <h1 className="lg:text-5xl text-xl mb-10 rtl:text-right rtl:font-IRANRounded ml-9 lg:ml-0 rtl:mr-9">
-          {t("My Projects")}
-        </h1>
-
-        {/* Swiper */}
-      <div className="flex flex-wrap gap-6 items-stretch">
-        <Swiper
-          loop={true} 
-          navigation={true} 
-          modules={[Navigation]} 
-          className={styles.swiper} 
-          direction="horizontal" 
-          spaceBetween={20} 
-         slidesPerView={1} 
-         breakpoints={{
+     <div id="Projects" className="w-full flex justify-center px-4">
+      <div className="lg:w-2/3 w-full">
+       <h1 className="lg:text-5xl text-2xl mb-10 text-center lg:text-right rtl:font-IRANRounded">
+       {t("My Projects")}
+       </h1>
+       {/* Swiper */}
+       <div className="flex flex-wrap gap-6 items-stretch justify-center">
+      <Swiper
+        loop={true} 
+        navigation={true} 
+        modules={[Navigation]} 
+        className={styles.swiper} 
+        direction="horizontal" 
+        spaceBetween={20} 
+        slidesPerView={1} 
+        breakpoints={{
           640: { slidesPerView: 1 }, 
           768: { slidesPerView: 2 }, 
           1024: { slidesPerView: 3 }, 
-          }}
-      
-         pagination={{ clickable: true }}
-     
-    >
-          {db.projects.map((project) => (
-            <SwiperSlide key={project.id}>
-              <MyProject {...project} />
-            </SwiperSlide>
-         ))}
-       </Swiper>
+        }}
+        pagination={{ clickable: true }}
+      >
+        {db.projects.map((project) => (
+          <SwiperSlide key={project.id}>
+            <Project {...project} />
+          </SwiperSlide>
+        ))}
+      </Swiper>
        </div>
-       </div>
+      </div>
+     </div>
 
-      
        <div className=' w-full flex justify-center'>
        <div className='grid grid-cols lg:w-1/2 w-full py-24 lg:py-32 ml-9 lg:ml-0 rtl:mr-9'>
         <div className='py-10'>
@@ -407,22 +320,22 @@ export default function Home() {
          <div className='mt-16'>
           <p className='text-xl text-slate-500 mb-7 rtl:font-IRANRounded'>Follow me:</p>
           <div className='flex'>
-           <div className='bg-gradient-to-r via-40% via-[#f1d4ad] from-[#eca348] to-[#ee9324] rounded-lg shadow-lg shadow-slate-700 ring-2 ring-[#f5ad55] w-12 h-12 flex justify-center items-center mr-4'>
+           <div className='bg-gradient-to-r via-40% via-[#f1d4ad] from-[#eca348] to-[#ee9324] rounded-lg shadow-lg shadow-slate-700 ring-2 ring-[#f5ad55] sm:w-12 sm:h-12 w-8 h-8 flex justify-center items-center mr-4'>
            <a href='https://github.com/maryaaama' target="_blank" rel="noopener noreferrer">
            <img src='/img/github.png' alt='github'/>
            </a>
            </div>
-           <div className='bg-gradient-to-r via-40% via-[#f1d4ad] from-[#eca348] to-[#f0890b] rounded-lg shadow-lg shadow-slate-700 ring-2 ring-[#f5ad55] w-12 h-12 flex justify-center items-center mr-4'>
+           <div className='bg-gradient-to-r via-40% via-[#f1d4ad] from-[#eca348] to-[#f0890b] rounded-lg shadow-lg shadow-slate-700 ring-2 ring-[#f5ad55] sm:w-12 sm:h-12 w-8 h-8 flex justify-center items-center mr-4'>
            <a href='https://wa.me/9193429924?text=Hey%there%How’re%you%doing'target="_blank" rel="noopener noreferrer" >
            <img src='/img/whatsapp.png' alt='whatsapp'/>
            </a>
            </div>
-           <div className='bg-gradient-to-r via-40% via-[#f1d4ad] from-[#eca348] to-[#f0890b] rounded-lg shadow-lg shadow-slate-700 ring-2 ring-[#f5ad55] w-12 h-12 flex justify-center items-center mr-4'>
+           <div className='bg-gradient-to-r via-40% via-[#f1d4ad] from-[#eca348] to-[#f0890b] rounded-lg shadow-lg shadow-slate-700 ring-2 ring-[#f5ad55] sm:w-12 sm:h-12 w-8 h-8 flex justify-center items-center mr-4'>
            <a href='https://www.linkedin.com/in/maryaaam-alipour-43a0a022b' target="_blank" rel="noopener noreferrer">
           <img src='/img/linkdin.png' alt='linkdin'/>
            </a>
            </div>
-           <div className='bg-gradient-to-r via-40% via-[#f1d4ad] from-[#eca348] to-[#f0890b] rounded-lg shadow-lg shadow-slate-700 ring-2 ring-[#f5ad55] bg-blend-darken w-12 h-12 flex justify-center items-center mr-4'>
+           <div className='bg-gradient-to-r via-40% via-[#f1d4ad] from-[#eca348] to-[#f0890b] rounded-lg shadow-lg shadow-slate-700 ring-2 ring-[#f5ad55] bg-blend-darken sm:w-12 sm:h-12 w-8 h-8 flex justify-center items-center mr-4'>
            <a href='https://t.me/maryaaamalipour' target="_blank" rel="noopener noreferrer">
            <img src='/img/telegram.png' alt='telegram'/>
            </a>
