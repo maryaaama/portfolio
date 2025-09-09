@@ -156,7 +156,7 @@ export default function Home() {
           <p className='lg:text-xl text-lg text-justify mt-5'>{t("Intro_Long")}</p>
         </div>
        {/*/////////////////////////////////////////////////////////////////*/}
-       <Services/>
+       
        <ProjectVideoGallery/>
       <div className="flex  flex-col lg:flex-row lg:gap-x-10 lg:justify-around justify-center lg:w-2/3 w-11/12 my-10">
         <div className=" w-11/12 rtl:mr-5 ml-5 lg:w-1/2 lg:basis-2/4 mb-10 ">
