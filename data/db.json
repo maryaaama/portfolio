@@ -35,6 +35,13 @@
       "href": "https://zamalaser.ir",
       "imageSrc": "/img/zama.png",
       "description": "zamalaserDescription"
+    },
+     {
+      "id": 6,
+      "name": "Wordpress CMS",
+      "href": "https://moj-sherkat.vercel.app",
+      "imageSrc": "/img/modelmoj2.png",
+      "description": "wordpresscms"
     }
   ]
 }
