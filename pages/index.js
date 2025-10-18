@@ -36,7 +36,8 @@ export default function Home() {
   const { t } = useTranslation("common");
   const [backgroundImage, setBackgroundImage] = useState("");
   const [isRtl, setIsRtl] = useState(false);
-
+  const [showAll, setShowAll] = useState(false);
+  const visibleProjects = showAll ? db.projects : db.projects.slice(0, 3);
   useEffect(() => {
     const updateBackground = () => {
       if (window.innerWidth >= 1024) {
@@ -129,7 +130,7 @@ export default function Home() {
             <div className="flex mt-3">
               {locale === "fa" ? (
                 <a
-                  href="/1404-7-Resume.pdf"
+                  href="/resumefarsi1407-7.pdf"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="bg-gradient-to-r from-[#eca348] to-[#ee9324] p-4 rounded-lg text-white lg:text-xl text-xs ease-in duration-300 rtl:font-IRANRounded"
@@ -284,35 +285,36 @@ export default function Home() {
           </div>
         </div>
         {/*پروژه ها */}
-        <div id="Projects" className="w-full flex justify-center px-4">
-          <div className="lg:w-2/3 w-full">
-            <h1 className="lg:text-5xl text-2xl mb-10 text-center lg:text-right rtl:font-IRANRounded">
+        <div
+          id="Projects" className="flex justify-center w-full px-4">
+          <div className="w-11/12 lg:w-2/3 flex flex-col items-center">
+            <h1 className="lg:text-5xl text-2xl mb-10 text-center lg:text-right rtl:font-IRANRounded text-gray-800 dark:text-gray-50">
               {t("My Projects")}
             </h1>
-            {/* Swiper */}
-            <div className="flex flex-wrap gap-6 items-stretch justify-center">
-              <Swiper
-                loop={true}
-                navigation={true}
-                modules={[Navigation]}
-                className={styles.swiper}
-                direction="horizontal"
-                spaceBetween={20}
-                slidesPerView={1}
-                breakpoints={{
-                  640: { slidesPerView: 1 },
-                  768: { slidesPerView: 2 },
-                  1024: { slidesPerView: 3 },
-                }}
-                pagination={{ clickable: true }}
-              >
-                {db.projects.map((project) => (
-                  <SwiperSlide key={project.id}>
-                    <Project {...project} />
-                  </SwiperSlide>
-                ))}
-              </Swiper>
+
+            {/* Grid cards */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+              {visibleProjects.map((project) => (
+                <Project key={project.id} {...project} />
+              ))}
             </div>
+
+            {/* Show more button */}
+            {!showAll && db.projects.length > 3 && (
+              <div className="flex justify-center mt-8">
+                <button
+                  onClick={() => setShowAll(true)}
+                  className="bg-gradient-to-r from-[#eca348] to-[#ee9324] text-white 
+             font-[IRANRounded] lg:text-lg text-sm font-semibold 
+             rounded-lg px-6 py-2 flex items-center justify-center 
+             hover:opacity-90 transition duration-300 ease-in 
+             rtl:font-IRANRounded"
+                >
+                  {t("Show more")}
+                </button>
+
+              </div>
+            )}
           </div>
         </div>
 
