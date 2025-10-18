@@ -1,13 +1,14 @@
 /* eslint-disable react/no-unescaped-entities */
 /* eslint-disable @next/next/no-img-element */
 
-import React, { useState , useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
+import { useRouter } from "next/router";
 import Head from "next/head";
 import Image from "next/image";
 import LanguageSwitcher from "./components/LanguageSwitcher";
 import { Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/react';
 import ProgressBar from './components/ProgressBar.js';
-import  db from '/data/db.json';
+import db from '/data/db.json';
 import { useTranslation } from 'next-i18next';
 import ThemeToggle from './components/ThemeToggle';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
@@ -29,9 +30,9 @@ export async function getStaticProps({ locale }) {
 }
 
 export default function Home() {
-
+  const { locale } = useRouter();
   const [activeTab, setActiveTab] = useState("experience");
-  const [language, setLanguage] = useState("en"); 
+  const [language, setLanguage] = useState("en");
   const { t } = useTranslation("common");
   const [backgroundImage, setBackgroundImage] = useState("");
   const [isRtl, setIsRtl] = useState(false);
@@ -41,7 +42,7 @@ export default function Home() {
       if (window.innerWidth >= 1024) {
         setBackgroundImage("url('img/back8.jpg')");
       } else {
-        setBackgroundImage(""); 
+        setBackgroundImage("");
       }
     };
     if (typeof document !== "undefined") {
@@ -54,7 +55,7 @@ export default function Home() {
     };
   }, []);
 
- 
+
   return (
     <>
       <Head>
@@ -63,291 +64,303 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
         <link
-           rel="preload"
-           href="/fonts/IRANRounded/IRAN-Rounded.woff"
-           as="font"
-           type="font/woff"
-           crossOrigin="anonymous"
-         />
+          rel="preload"
+          href="/fonts/IRANRounded/IRAN-Rounded.woff"
+          as="font"
+          type="font/woff"
+          crossOrigin="anonymous"
+        />
       </Head>
       <main className="flex flex-col items-center dark:bg-gray-900 dark:text-white ">
-     {/* <div style={{ backgroundImage }} className="bg-fixed bg-cover bg-no-repeat relative h-full w-full rtl:bg-right">
+        {/* <div style={{ backgroundImage }} className="bg-fixed bg-cover bg-no-repeat relative h-full w-full rtl:bg-right">
     
      Navbar */}
-    <div className="z-10 sticky w-full backdrop-contrast-50 lg:p-2 p-0 bg-gray-100 dark:bg-gray-900 shadow-lg">
-      <div className="flex justify-between items-center w-11/12 lg:w-2/3 mx-auto ">
-        {/* سمت چپ */}
-        <div className="flex items-center space-x-2 lg:space-x-4 rtl:space-x-reverse">
-          <p className="lg:text-lg text-base text-slate-600 dark:text-slate-200 rtl:font-IRANRounded">
-            {t("maryam alipour")}
-          </p>
-          <LanguageSwitcher />
-        </div>
-        {/* سمت راست */}
-        <div className="flex items-center space-x-0 lg:space-x-4 rtl:space-x-reverse ">
-          <ThemeToggle />
-          {/* موبایل منو */}
-          <div className="lg:hidden relative flex justify-center">
-            <Menu>
-              <MenuButton className="text-slate-600 dark:text-slate-100">
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
-                </svg>
-              </MenuButton>
-              <MenuItems className="absolute z-50 bg-white dark:bg-gray-900 top-full mt-2 w-40 shadow-lg rounded-md">
-                <MenuItem>
-                  <a className="block px-4 py-2 data-[focus]:bg-blue-100 dark:data-[focus]:bg-blue-700 dark:text-slate-200 rtl:text-left rtl:font-IRANRounded text-xs" href="#experience">{t("Experience")}</a>
-                </MenuItem>
-                <MenuItem>
-                  <a className="block px-4 py-2 data-[focus]:bg-blue-100 dark:data-[focus]:bg-blue-700 dark:text-slate-200 rtl:text-left rtl:font-IRANRounded text-xs" href="#Skills">{t("Skills")}</a>
-                </MenuItem>
-                <MenuItem>
-                  <a className="block px-4 py-2 data-[focus]:bg-blue-100 dark:data-[focus]:bg-blue-700 dark:text-slate-200 rtl:text-left rtl:font-IRANRounded text-xs" href="#projects">{t("Projects")}</a>
-                </MenuItem>
-              </MenuItems>
-            </Menu>
+        <div className="z-10 sticky w-full backdrop-contrast-50 lg:p-2 p-0 bg-gray-100 dark:bg-gray-900 shadow-lg">
+          <div className="flex justify-between items-center w-11/12 lg:w-2/3 mx-auto ">
+            {/* سمت چپ */}
+            <div className="flex items-center space-x-2 lg:space-x-4 rtl:space-x-reverse">
+              <p className="lg:text-lg text-base text-slate-600 dark:text-slate-200 rtl:font-IRANRounded">
+                {t("maryam alipour")}
+              </p>
+              <LanguageSwitcher />
+            </div>
+            {/* سمت راست */}
+            <div className="flex items-center space-x-0 lg:space-x-4 rtl:space-x-reverse ">
+              <ThemeToggle />
+              {/* موبایل منو */}
+              <div className="lg:hidden relative flex justify-center">
+                <Menu>
+                  <MenuButton className="text-slate-600 dark:text-slate-100">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+                    </svg>
+                  </MenuButton>
+                  <MenuItems className="absolute z-50 bg-white dark:bg-gray-900 top-full mt-2 w-40 shadow-lg rounded-md">
+                    <MenuItem>
+                      <a className="block px-4 py-2 data-[focus]:bg-blue-100 dark:data-[focus]:bg-blue-700 dark:text-slate-200 rtl:text-left rtl:font-IRANRounded text-xs" href="#experience">{t("Experience")}</a>
+                    </MenuItem>
+                    <MenuItem>
+                      <a className="block px-4 py-2 data-[focus]:bg-blue-100 dark:data-[focus]:bg-blue-700 dark:text-slate-200 rtl:text-left rtl:font-IRANRounded text-xs" href="#Skills">{t("Skills")}</a>
+                    </MenuItem>
+                    <MenuItem>
+                      <a className="block px-4 py-2 data-[focus]:bg-blue-100 dark:data-[focus]:bg-blue-700 dark:text-slate-200 rtl:text-left rtl:font-IRANRounded text-xs" href="#projects">{t("Projects")}</a>
+                    </MenuItem>
+                  </MenuItems>
+                </Menu>
+              </div>
+              {/* دسکتاپ لینک‌ها */}
+              <div className="hidden lg:flex space-x-5 rtl:space-x-reverse">
+                <a href="#experience" className="text-slate-600 rtl:font-IRANRounded dark:text-slate-200">{t("Experience")}</a>
+                <a href="#Skills" className="text-slate-600 rtl:font-IRANRounded dark:text-slate-200">{t("Skills")}</a>
+                <a href="#Projects" className="text-slate-600 rtl:font-IRANRounded dark:text-slate-200">{t("Projects")}</a>
+              </div>
+            </div>
           </div>
-          {/* دسکتاپ لینک‌ها */}
-          <div className="hidden lg:flex space-x-5 rtl:space-x-reverse">
-            <a href="#experience" className="text-slate-600 rtl:font-IRANRounded dark:text-slate-200">{t("Experience")}</a>
-            <a href="#Skills" className="text-slate-600 rtl:font-IRANRounded dark:text-slate-200">{t("Skills")}</a>
-            <a href="#Projects" className="text-slate-600 rtl:font-IRANRounded dark:text-slate-200">{t("Projects")}</a>
+          {/* </div> background*/}
+        </div>
+        {/* Hero Section */}
+        <div className="flex flex-col lg:flex-row items-center justify-center w-11/12 mx-auto py-16 bg-white dark:bg-gray-900 dark:text-white rtl:text-right">
+          {/* متن */}
+          <div className="flex flex-col items-start lg:mr-10 rtl:ml-10">
+            <h3 className="mb-3 lg:text-xl text-lg font-bold rtl:font-IRANRounded">{t("I am")}</h3>
+            <h1 className="lg:text-7xl text-xl mb-3 font-bold rtl:font-IRANRounded rtl:mb-6">{t("Maryam Alipour")}</h1>
+            <h2 className="lg:text-4xl text-xl font-medium animate-pulse rtl:font-IRANRounded mb-3">{t("Front End Developer")}</h2>
+            <h2 className="lg:text-4xl text-xl font-medium animate-pulse rtl:font-IRANRounded">{t("Software engineer")}</h2>
+            <div className="flex mt-3">
+              {locale === "fa" ? (
+                <a
+                  href="/1404-7-Resume.pdf"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="bg-gradient-to-r from-[#eca348] to-[#ee9324] p-4 rounded-lg text-white lg:text-xl text-xs ease-in duration-300 rtl:font-IRANRounded"
+                >
+                  دانلود رزومه
+                </a>
+              ) : (
+                <a
+                  href="/1404-7-Resume.pdf"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="bg-gradient-to-r from-[#eca348] to-[#ee9324] p-4 rounded-lg text-white lg:text-xl text-xs ease-in duration-300 rtl:font-IRANRounded"
+                >
+                  Download CV
+                </a>
+              )}
+
+            </div>
           </div>
-        </div>
-      </div>
-        {/* </div> background*/}
-    </div>
-     {/* Hero Section */}
-     <div className="flex flex-col lg:flex-row items-center justify-center w-11/12 mx-auto py-16 bg-white dark:bg-gray-900 dark:text-white rtl:text-right">
-      {/* متن */}
-      <div className="flex flex-col items-start lg:mr-10 rtl:ml-10">
-        <h3 className="mb-3 lg:text-xl text-lg font-bold rtl:font-IRANRounded">{t("I am")}</h3>
-        <h1 className="lg:text-7xl text-xl mb-3 font-bold rtl:font-IRANRounded rtl:mb-6">{t("Maryam Alipour")}</h1>
-        <h2 className="lg:text-4xl text-xl font-medium animate-pulse rtl:font-IRANRounded mb-3">{t("Front End Developer")}</h2>
-        <h2 className="lg:text-4xl text-xl font-medium animate-pulse rtl:font-IRANRounded">{t("Software engineer")}</h2>
-        <div className="flex mt-3">
-          <a
-            href="/Maryam Alipour_1403-9-5-1-1.pdf"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="bg-gradient-to-r from-[#eca348] to-[#ee9324] p-4 rounded-lg text-white lg:text-xl text-xs ease-in duration-300 rtl:font-IRANRounded"
-          >
-            {t("Download CV")}
-          </a>
-        </div>
-      </div>
 
-      {/* تصویر */}
-      <div className="w-full max-w-[580px] mt-10 lg:mt-0">
-        <Image
-          src="/img/ax111.webp"
-          alt="My Image"
-          layout="responsive"
-          width={480}
-          height={480}
-          priority
-        />
-      </div>
+          {/* تصویر */}
+          <div className="w-full max-w-[580px] mt-10 lg:mt-0">
+            <Image
+              src="/img/ax111.webp"
+              alt="My Image"
+              layout="responsive"
+              width={480}
+              height={480}
+              priority
+            />
+          </div>
 
-     </div>
-       {/*/////////////////////////////////////////////////////////////////*/} 
+        </div>
+        {/*/////////////////////////////////////////////////////////////////*/}
         <div className='lg:w-2/3 w-11/12 my-16 text-slate-800 bg-gradient-to-r from-[#dbf7fa] via-[#61bbef] to-[#3f94ca] shadow-2xl shadow-[#0b2057] rounded-xl lg:p-20 p-5'>
           <span className='lg:text-2xl text-xl mb-10'>{t("About Me")}</span>
           <p className='lg:text-xl text-lg text-justify mt-5'>{t("Intro_Long")}</p>
         </div>
-       {/*/////////////////////////////////////////////////////////////////*/}
-       
-       <ProjectVideoGallery/>
-      <div className="flex  flex-col lg:flex-row lg:gap-x-10 lg:justify-around justify-center lg:w-2/3 w-11/12 my-10">
-        <div className=" w-11/12 rtl:mr-5 ml-5 lg:w-1/2 lg:basis-2/4 mb-10 ">
-          <h1 id='experience' className="lg:text-5xl text-2xl mb-12 rtl:text-center rtl:font-IRANRounded">{t("Skills & Experience")}</h1>
-          <h3 id='Skills' className="lg:text-3xl text-xl rtl:text-right rtl:font-IRANRounded">{t("My Skills")}</h3>
-          <div className="grid grid-cols-2 gap-4 mt-5">
-          <div className="flex w-full flex-col gap-4">
-            <div className="flex items-center justify-between">
-              <h6 className="lg:text-base text-xs font-sans">SQL</h6>
-              <span className="text-xs lg:text-base">50%</span>
-            </div>
-            <ProgressBar value={50} color="#8A2BE2" />
+        {/*/////////////////////////////////////////////////////////////////*/}
 
-            <div className="flex items-center justify-between">
-              <h6 className="lg:text-base text-xs font-sans">TypeScript</h6>
-              <span className="text-xs lg:text-base">50%</span>
-            </div>
-            <ProgressBar value={50} color="#FFA500" />
+        <ProjectVideoGallery />
+        <div className="flex  flex-col lg:flex-row lg:gap-x-10 lg:justify-around justify-center lg:w-2/3 w-11/12 my-10">
+          <div className=" w-11/12 rtl:mr-5 ml-5 lg:w-1/2 lg:basis-2/4 mb-10 ">
+            <h1 id='experience' className="lg:text-5xl text-2xl mb-12 rtl:text-center rtl:font-IRANRounded">{t("Skills & Experience")}</h1>
+            <h3 id='Skills' className="lg:text-3xl text-xl rtl:text-right rtl:font-IRANRounded">{t("My Skills")}</h3>
+            <div className="grid grid-cols-2 gap-4 mt-5">
+              <div className="flex w-full flex-col gap-4">
+                <div className="flex items-center justify-between">
+                  <h6 className="lg:text-base text-xs font-sans">SQL</h6>
+                  <span className="text-xs lg:text-base">50%</span>
+                </div>
+                <ProgressBar value={50} color="#8A2BE2" />
 
-            <div className="flex items-center justify-between">
-              <h6 className="lg:text-base text-xs font-sans">JavaScript</h6>
-              <span className="text-xs lg:text-base">90%</span>
-            </div>
-            <ProgressBar value={90} color="#0000FF" />
-          </div>
-          <div className="flex w-full flex-col gap-4">
-            <div className="flex items-center justify-between">
-              <h6 className="lg:text-base text-xs font-sans">TailwindCSS</h6>
-              <span className="text-xs lg:text-base">85%</span>
-            </div>
-            <ProgressBar value={85} color="#286eb4" />
+                <div className="flex items-center justify-between">
+                  <h6 className="lg:text-base text-xs font-sans">n8n</h6>
+                  <span className="text-xs lg:text-base">70%</span>
+                </div>
+                <ProgressBar value={50} color="#FFA500" />
 
-            <div className="flex items-center justify-between">
-              <h6 className="lg:text-base text-xs font-sans ">Next.js</h6>
-              <span className="text-xs lg:text-base">85%</span>
-            </div>
-            <ProgressBar value={85} color="#fca5a5" />
-
-            <div className="flex items-center justify-between">
-              <h6 className="lg:text-base text-xs font-sans ">React.js</h6>
-              <span className="text-xs lg:text-base">90%</span>
-            </div>
-            <ProgressBar value={90} color="#DC143C" />
-          </div>
-          </div>
-        </div>
-        <div className="lg:ml-10 ml-4 rtl:mr-4 basis-full w-11/12  lg:w-1/2 lg:basis-2/4 mx-0 mt-8 lg:mt-0 ">
-          <div className="grid grid-cols-2 place-content-stretch border-[#eca348] border-2 rounded-lg w-full ">
-            <button
-               className={`rtl:text-center rtl:font-IRANRounded lg:text-2xl text-lg py-4 ${activeTab === 'experience' ? 'bg-gradient-to-r from-[#eca348] to-[#ee9324] ' : ''}`}
-               onClick={() => setActiveTab("experience")}
-             >
-               {t("Experience")}
-             </button>
-             <button
-               className={`rtl:text-center rtl:font-IRANRounded lg:text-2xl text-lg py-4 ${activeTab === 'education' ? 'bg-gradient-to-r from-[#eca348] to-[#ee9324]' : ''}`}
-               onClick={() => setActiveTab("education")}
-             >
-               {t("Education")}
-             </button>
-          </div>
-
-           {activeTab === 'experience' && (
-             <div className='grid grid-cols-2 gap-4 mt-5 pl-5'>
-               <div className='grid gap-y-5'>
-                 <div className='mb-5 rtl:mr-5'>
-                 <h5 className='lg:text-2xl text-sm rtl:text-right rtl:font-IRANRounded'>{t("Front End Developer")}</h5>
-                 <hr className='my-2 text-current'></hr>
-                 <p className='lg:text-lg text-xs text-[#286eb4] rtl:text-right'>{t("2022 2024")}</p>
-                 <h6 className='lg:text-xl text-sm rtl:text-right rtl:font-IRANRounded'>Karjoo.plus</h6>
-                 </div>
-                 <div className='rtl:mr-5'>
-                 <h5 className='lg:text-2xl text-sm rtl:text-right rtl:font-IRANRounded'>{t("Insurance employee")}</h5>
-                 <hr className='my-2 text-current'></hr>
-                 <p className='lg:text-lg text-xs text-[#286eb4] rtl:text-right'>{t("2020 2022")}</p>
-                 <h6 className='lg:text-xl text-sm rtl:text-right rtl:font-IRANRounded'>{t("Iran Insurance Office")}</h6>
-                 </div>
-               </div>
-               <div className='grid gap-y-5 rtl:mr-5'>
-               <div className='mb-5'>
-                 <h5 className='lg:text-2xl text-sm rtl:text-right rtl:font-IRANRounded'>{t("WordPress website")}</h5>
-                 <hr className='my-2 text-current'></hr>
-                 <p className='lg:text-lg text-xs text-[#286eb4] rtl:text-right'>{t("2018 2020")}</p>
-                 <h6 className='lg:text-xl text-sm rtl:text-right rtl:font-IRANRounded'>{t("Personal business")}</h6>
-                 </div>
-             <div>
-                 <h5 className='lg:text-2xl text-sm rtl:text-right rtl:font-IRANRounded'>{t("Training Manager")}</h5>
-                 <hr className='my-2 text-current w-1/2'></hr>
-                 <p className='lg:text-lg text-xs text-[#286eb4] rtl:text-right'>{t("2007 2010")}</p>
-                 <h6 className='lg:text-xl text-sm rtl:text-right rtl:font-IRANRounded'>{t("Ishraq School of Zanjan")}</h6>
-                 </div>
-               </div>
-             </div>
-           )}
-
-           {activeTab === 'education' && (
-            <div className='grid grid-cols-2 gap-4 mt-5 pl-5'>
-              <div className='grid gap-y-5'>
-                <h2 className='lg:text-2xl text-sm rtl:mr-5 rtl:font-IRANRounded'>{t("Software Engineering, North University")}</h2>
-                <a href='https://www.freecodecamp.org/certification/fcc7f968b53-fdcb-4867-8250-f6686f422f81/front-end-development-libraries'><h2 className='text-cyan-400 lg:text-2xl text-sm rtl:mr-5'>{t("Freecodecamp Front End Development")}</h2></a>
-                <h2 className='lg:text-2xl text-sm rtl:mr-5 rtl:font-IRANRounded'>{t("Sabzlearn Javascript")}</h2>
-                <h2 className='lg:text-2xl text-sm rtl:mr-5 rtl:font-IRANRounded'>{t("Sabzlearn Reactjs")}</h2>
+                <div className="flex items-center justify-between">
+                  <h6 className="lg:text-base text-xs font-sans">JavaScript</h6>
+                  <span className="text-xs lg:text-base">90%</span>
+                </div>
+                <ProgressBar value={90} color="#0000FF" />
               </div>
-             {/* <div className='grid gap-y-5'>
+              <div className="flex w-full flex-col gap-4">
+                <div className="flex items-center justify-between">
+                  <h6 className="lg:text-base text-xs font-sans">TailwindCSS</h6>
+                  <span className="text-xs lg:text-base">90%</span>
+                </div>
+                <ProgressBar value={85} color="#286eb4" />
+
+                <div className="flex items-center justify-between">
+                  <h6 className="lg:text-base text-xs font-sans ">Next.js</h6>
+                  <span className="text-xs lg:text-base">90%</span>
+                </div>
+                <ProgressBar value={85} color="#fca5a5" />
+
+                <div className="flex items-center justify-between">
+                  <h6 className="lg:text-base text-xs font-sans ">React.js</h6>
+                  <span className="text-xs lg:text-base">90%</span>
+                </div>
+                <ProgressBar value={90} color="#DC143C" />
+              </div>
+            </div>
+          </div>
+          <div className="lg:ml-10 ml-4 rtl:mr-4 basis-full w-11/12  lg:w-1/2 lg:basis-2/4 mx-0 mt-8 lg:mt-0 ">
+            <div className="grid grid-cols-2 place-content-stretch border-[#eca348] border-2 rounded-lg w-full ">
+              <button
+                className={`rtl:text-center rtl:font-IRANRounded lg:text-2xl text-lg py-4 ${activeTab === 'experience' ? 'bg-gradient-to-r from-[#eca348] to-[#ee9324] ' : ''}`}
+                onClick={() => setActiveTab("experience")}
+              >
+                {t("Experience")}
+              </button>
+              <button
+                className={`rtl:text-center rtl:font-IRANRounded lg:text-2xl text-lg py-4 ${activeTab === 'education' ? 'bg-gradient-to-r from-[#eca348] to-[#ee9324]' : ''}`}
+                onClick={() => setActiveTab("education")}
+              >
+                {t("Education")}
+              </button>
+            </div>
+
+            {activeTab === 'experience' && (
+              <div className='grid grid-cols-2 gap-4 mt-5 pl-5'>
+                <div className='grid gap-y-5'>
+                  <div className='mb-5 rtl:mr-5'>
+                    <h5 className='lg:text-2xl text-sm rtl:text-right rtl:font-IRANRounded'>{t("Front End Developer")}</h5>
+                    <hr className='my-2 text-current'></hr>
+                    <p className='lg:text-lg text-xs text-[#286eb4] rtl:text-right'>{t("2022 2024")}</p>
+                    <h6 className='lg:text-xl text-sm rtl:text-right rtl:font-IRANRounded'>Karjoo.plus</h6>
+                  </div>
+                  <div className='rtl:mr-5'>
+                    <h5 className='lg:text-2xl text-sm rtl:text-right rtl:font-IRANRounded'>{t("Insurance employee")}</h5>
+                    <hr className='my-2 text-current'></hr>
+                    <p className='lg:text-lg text-xs text-[#286eb4] rtl:text-right'>{t("2020 2022")}</p>
+                    <h6 className='lg:text-xl text-sm rtl:text-right rtl:font-IRANRounded'>{t("Iran Insurance Office")}</h6>
+                  </div>
+                </div>
+                <div className='grid gap-y-5 rtl:mr-5'>
+                  <div className='mb-5'>
+                    <h5 className='lg:text-2xl text-sm rtl:text-right rtl:font-IRANRounded'>{t("WordPress website")}</h5>
+                    <hr className='my-2 text-current'></hr>
+                    <p className='lg:text-lg text-xs text-[#286eb4] rtl:text-right'>{t("2018 2020")}</p>
+                    <h6 className='lg:text-xl text-sm rtl:text-right rtl:font-IRANRounded'>{t("Personal business")}</h6>
+                  </div>
+                  <div>
+                    <h5 className='lg:text-2xl text-sm rtl:text-right rtl:font-IRANRounded'>{t("Training Manager")}</h5>
+                    <hr className='my-2 text-current w-1/2'></hr>
+                    <p className='lg:text-lg text-xs text-[#286eb4] rtl:text-right'>{t("2007 2010")}</p>
+                    <h6 className='lg:text-xl text-sm rtl:text-right rtl:font-IRANRounded'>{t("Ishraq School of Zanjan")}</h6>
+                  </div>
+                </div>
+              </div>
+            )}
+
+            {activeTab === 'education' && (
+              <div className='grid grid-cols-2 gap-4 mt-5 pl-5'>
+                <div className='grid gap-y-5'>
+                  <h2 className='lg:text-2xl text-sm rtl:mr-5 rtl:font-IRANRounded'>{t("Software Engineering, North University")}</h2>
+                  <a href='https://www.freecodecamp.org/certification/fcc7f968b53-fdcb-4867-8250-f6686f422f81/front-end-development-libraries'><h2 className='text-cyan-400 lg:text-2xl text-sm rtl:mr-5'>{t("Freecodecamp Front End Development")}</h2></a>
+                  <h2 className='lg:text-2xl text-sm rtl:mr-5 rtl:font-IRANRounded'>{t("Sabzlearn Javascript")}</h2>
+                  <h2 className='lg:text-2xl text-sm rtl:mr-5 rtl:font-IRANRounded'>{t("Sabzlearn Reactjs")}</h2>
+                </div>
+                {/* <div className='grid gap-y-5'>
                 <h2 className='text-2xl'>IOS Development</h2>
                 <h2 className='text-2xl'>Cambridge University</h2>
                 <h2 className='text-2xl'>Apps Design</h2>
                 <h2 className='text-2xl'>Cambridge University</h2>
               </div>*/}
+              </div>
+            )}
+          </div>
+        </div>
+        {/*پروژه ها */}
+        <div id="Projects" className="w-full flex justify-center px-4">
+          <div className="lg:w-2/3 w-full">
+            <h1 className="lg:text-5xl text-2xl mb-10 text-center lg:text-right rtl:font-IRANRounded">
+              {t("My Projects")}
+            </h1>
+            {/* Swiper */}
+            <div className="flex flex-wrap gap-6 items-stretch justify-center">
+              <Swiper
+                loop={true}
+                navigation={true}
+                modules={[Navigation]}
+                className={styles.swiper}
+                direction="horizontal"
+                spaceBetween={20}
+                slidesPerView={1}
+                breakpoints={{
+                  640: { slidesPerView: 1 },
+                  768: { slidesPerView: 2 },
+                  1024: { slidesPerView: 3 },
+                }}
+                pagination={{ clickable: true }}
+              >
+                {db.projects.map((project) => (
+                  <SwiperSlide key={project.id}>
+                    <Project {...project} />
+                  </SwiperSlide>
+                ))}
+              </Swiper>
             </div>
-           )}
+          </div>
         </div>
-      </div>
-      {/*پروژه ها */}
-     <div id="Projects" className="w-full flex justify-center px-4">
-      <div className="lg:w-2/3 w-full">
-       <h1 className="lg:text-5xl text-2xl mb-10 text-center lg:text-right rtl:font-IRANRounded">
-       {t("My Projects")}
-       </h1>
-       {/* Swiper */}
-       <div className="flex flex-wrap gap-6 items-stretch justify-center">
-      <Swiper
-        loop={true} 
-        navigation={true} 
-        modules={[Navigation]} 
-        className={styles.swiper} 
-        direction="horizontal" 
-        spaceBetween={20} 
-        slidesPerView={1} 
-        breakpoints={{
-          640: { slidesPerView: 1 }, 
-          768: { slidesPerView: 2 }, 
-          1024: { slidesPerView: 3 }, 
-        }}
-        pagination={{ clickable: true }}
-      >
-        {db.projects.map((project) => (
-          <SwiperSlide key={project.id}>
-            <Project {...project} />
-          </SwiperSlide>
-        ))}
-      </Swiper>
-       </div>
-      </div>
-     </div>
 
-       <div className=' w-full flex justify-center'>
-       <div className='grid grid-cols lg:w-1/2 w-full py-24 lg:py-32 ml-9 lg:ml-0 rtl:mr-9'>
-        <div className='py-10'>
-          <h1 className='lg:text-5xl text-xl rtl:text-right rtl:font-IRANRounded'>{t("Let's Work Together")}</h1>
-          <div className='mt-16'>
-            <p className='lg:text-xl text-lg text-slate-500 mb-5 rtl:text-right rtl:font-IRANRounded'>{t("Call me:")}</p>
-            <h3 className='lg:text-3xl text-lg'>09193429924</h3>
-            <hr className='mr-9 rtl:mr-0'></hr>
+        <div className=' w-full flex justify-center'>
+          <div className='grid grid-cols lg:w-1/2 w-full py-24 lg:py-32 ml-9 lg:ml-0 rtl:mr-9'>
+            <div className='py-10'>
+              <h1 className='lg:text-5xl text-xl rtl:text-right rtl:font-IRANRounded'>{t("Let's Work Together")}</h1>
+              <div className='mt-16'>
+                <p className='lg:text-xl text-lg text-slate-500 mb-5 rtl:text-right rtl:font-IRANRounded'>{t("Call me:")}</p>
+                <h3 className='lg:text-3xl text-lg'>09193429924</h3>
+                <hr className='mr-9 rtl:mr-0'></hr>
+              </div>
+              <div className='mt-16'>
+                <p className='lg:text-xl text-lg text-slate-500 mb-5 rtl:text-right rtl:font-IRANRounded'>{t("Mail me:")}</p>
+                <h3 className='lg:text-3xl text-lg'>maryamalipour1901@gmail.com</h3>
+                <hr className='mr-9 rtl:mr-0'></hr>
+              </div>
+              <div className='mt-16'>
+                <p className='text-xl text-slate-500 mb-7 rtl:font-IRANRounded'>Follow me:</p>
+                <div className='flex'>
+                  <div className='bg-gradient-to-r via-40% via-[#f1d4ad] from-[#eca348] to-[#ee9324] rounded-lg shadow-lg shadow-slate-700 ring-2 ring-[#f5ad55] sm:w-12 sm:h-12 w-8 h-8 flex justify-center items-center mr-4'>
+                    <a href='https://github.com/maryaaama' target="_blank" rel="noopener noreferrer">
+                      <img src='/img/github.png' alt='github' />
+                    </a>
+                  </div>
+                  <div className='bg-gradient-to-r via-40% via-[#f1d4ad] from-[#eca348] to-[#f0890b] rounded-lg shadow-lg shadow-slate-700 ring-2 ring-[#f5ad55] sm:w-12 sm:h-12 w-8 h-8 flex justify-center items-center mr-4'>
+                    <a href='https://wa.me/9193429924?text=Hey%there%How’re%you%doing' target="_blank" rel="noopener noreferrer" >
+                      <img src='/img/whatsapp.png' alt='whatsapp' />
+                    </a>
+                  </div>
+                  <div className='bg-gradient-to-r via-40% via-[#f1d4ad] from-[#eca348] to-[#f0890b] rounded-lg shadow-lg shadow-slate-700 ring-2 ring-[#f5ad55] sm:w-12 sm:h-12 w-8 h-8 flex justify-center items-center mr-4'>
+                    <a href='https://www.linkedin.com/in/maryaaam-alipour-43a0a022b' target="_blank" rel="noopener noreferrer">
+                      <img src='/img/linkdin.png' alt='linkdin' />
+                    </a>
+                  </div>
+                  <div className='bg-gradient-to-r via-40% via-[#f1d4ad] from-[#eca348] to-[#f0890b] rounded-lg shadow-lg shadow-slate-700 ring-2 ring-[#f5ad55] bg-blend-darken sm:w-12 sm:h-12 w-8 h-8 flex justify-center items-center mr-4'>
+                    <a href='https://t.me/maryaaamalipour' target="_blank" rel="noopener noreferrer">
+                      <img src='/img/telegram.png' alt='telegram' />
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            {/*<div><ContactUs/></div>*/}
           </div>
-          <div className='mt-16'>
-            <p className='lg:text-xl text-lg text-slate-500 mb-5 rtl:text-right rtl:font-IRANRounded'>{t("Mail me:")}</p>
-            <h3 className='lg:text-3xl text-lg'>maryamalipour1901@gmail.com</h3>
-            <hr className='mr-9 rtl:mr-0'></hr>
-          </div>
-         <div className='mt-16'>
-          <p className='text-xl text-slate-500 mb-7 rtl:font-IRANRounded'>Follow me:</p>
-          <div className='flex'>
-           <div className='bg-gradient-to-r via-40% via-[#f1d4ad] from-[#eca348] to-[#ee9324] rounded-lg shadow-lg shadow-slate-700 ring-2 ring-[#f5ad55] sm:w-12 sm:h-12 w-8 h-8 flex justify-center items-center mr-4'>
-           <a href='https://github.com/maryaaama' target="_blank" rel="noopener noreferrer">
-           <img src='/img/github.png' alt='github'/>
-           </a>
-           </div>
-           <div className='bg-gradient-to-r via-40% via-[#f1d4ad] from-[#eca348] to-[#f0890b] rounded-lg shadow-lg shadow-slate-700 ring-2 ring-[#f5ad55] sm:w-12 sm:h-12 w-8 h-8 flex justify-center items-center mr-4'>
-           <a href='https://wa.me/9193429924?text=Hey%there%How’re%you%doing'target="_blank" rel="noopener noreferrer" >
-           <img src='/img/whatsapp.png' alt='whatsapp'/>
-           </a>
-           </div>
-           <div className='bg-gradient-to-r via-40% via-[#f1d4ad] from-[#eca348] to-[#f0890b] rounded-lg shadow-lg shadow-slate-700 ring-2 ring-[#f5ad55] sm:w-12 sm:h-12 w-8 h-8 flex justify-center items-center mr-4'>
-           <a href='https://www.linkedin.com/in/maryaaam-alipour-43a0a022b' target="_blank" rel="noopener noreferrer">
-          <img src='/img/linkdin.png' alt='linkdin'/>
-           </a>
-           </div>
-           <div className='bg-gradient-to-r via-40% via-[#f1d4ad] from-[#eca348] to-[#f0890b] rounded-lg shadow-lg shadow-slate-700 ring-2 ring-[#f5ad55] bg-blend-darken sm:w-12 sm:h-12 w-8 h-8 flex justify-center items-center mr-4'>
-           <a href='https://t.me/maryaaamalipour' target="_blank" rel="noopener noreferrer">
-           <img src='/img/telegram.png' alt='telegram'/>
-           </a>
-           </div> 
-          </div>
-         </div>
         </div>
-       {/*<div><ContactUs/></div>*/} 
-       </div>
-       </div>
       </main>
-      
+
     </>
   );
 }

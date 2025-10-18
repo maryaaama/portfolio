@@ -1,6 +1,13 @@
 {
   "projects": [
     {
+      "id": 0,
+      "name": "Bazaryab Automation Platform",
+      "href": "https://bazaryab.vercel.app/",
+      "imageSrc": "/img/divarsearch.png",
+      "description": "bazaryabDescription"
+    },
+    {
       "id": 1,
       "name": "Landing karjoo",
       "href": "https://karjoo.plus",
@@ -28,7 +35,6 @@
       "imageSrc": "/img/dashbord1.jpg",
       "description": "dashboardDescription"
     },
-    
     {
       "id": 5,
       "name": "zamalaser",
@@ -36,7 +42,7 @@
       "imageSrc": "/img/zama.png",
       "description": "zamalaserDescription"
     },
-     {
+    {
       "id": 6,
       "name": "Wordpress CMS",
       "href": "https://moj-sherkat.vercel.app",
