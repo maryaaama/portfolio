@@ -22,7 +22,7 @@
       "description": "nextauthDescription"
     },
     {
-      "id": 2,
+      "id": 3,
       "name": "next-coffee",
       "href": "https://maryaaama.github.io/next-coffee/",
       "imageSrc": "/img/cofee1.png",
@@ -48,6 +48,20 @@
       "href": "https://moj-sherkat.vercel.app",
       "imageSrc": "/img/modelmoj2.png",
       "description": "wordpresscms"
+    },
+    {
+      "id": 7,
+      "name": "First WordPress Theme",
+      "href": "https://maryaaama.github.io/FirstCssTheme/",
+      "imageSrc": "/img/firstthem.png",
+      "description": "firstWordpressThemeDescription"
+    },
+    {
+      "id": 8,
+      "name": "Crypto Typescript N8N",
+      "href": "https://maryaaama.github.io/crypto-dashboard/",
+      "imageSrc": "/img/cryptodata.png",
+      "description": "cryptoDashboardDescription"
     }
   ]
 }
