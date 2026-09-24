@@ -165,12 +165,13 @@ export default function Home() {
 
         </div>
         {/*/////////////////////////////////////////////////////////////////*/}
+        
         <div className='lg:w-2/3 w-11/12 my-16 text-slate-800 bg-gradient-to-r from-[#dbf7fa] via-[#61bbef] to-[#3f94ca] shadow-2xl shadow-[#0b2057] rounded-xl lg:p-20 p-5'>
           <span className='lg:text-2xl text-xl mb-10'>{t("About Me")}</span>
           <p className='lg:text-xl text-lg text-justify mt-5'>{t("Intro_Long")}</p>
         </div>
         {/*/////////////////////////////////////////////////////////////////*/}
-
+        <Services/>
         <ProjectVideoGallery />
         <div className="flex  flex-col lg:flex-row lg:gap-x-10 lg:justify-around justify-center lg:w-2/3 w-11/12 my-10">
           <div className=" w-11/12 rtl:mr-5 ml-5 lg:w-1/2 lg:basis-2/4 mb-10 ">
@@ -179,8 +180,8 @@ export default function Home() {
             <div className="grid grid-cols-2 gap-4 mt-5">
               <div className="flex w-full flex-col gap-4">
                 <div className="flex items-center justify-between">
-                  <h6 className="lg:text-base text-xs font-sans">SQL</h6>
-                  <span className="text-xs lg:text-base">50%</span>
+                  <h6 className="lg:text-base text-xs font-sans">wordpress</h6>
+                  <span className="text-xs lg:text-base">95%</span>
                 </div>
                 <ProgressBar value={50} color="#8A2BE2" />
 
@@ -243,24 +244,24 @@ export default function Home() {
                     <h6 className='lg:text-xl text-sm rtl:text-right rtl:font-IRANRounded'>Karjoo.plus</h6>
                   </div>
                   <div className='rtl:mr-5'>
-                    <h5 className='lg:text-2xl text-sm rtl:text-right rtl:font-IRANRounded'>{t("Insurance employee")}</h5>
+                    <h5 className='lg:text-2xl text-sm rtl:text-right rtl:font-IRANRounded'>{t("zamalaser and ...")}</h5>
                     <hr className='my-2 text-current'></hr>
-                    <p className='lg:text-lg text-xs text-[#286eb4] rtl:text-right'>{t("2020 2022")}</p>
-                    <h6 className='lg:text-xl text-sm rtl:text-right rtl:font-IRANRounded'>{t("Iran Insurance Office")}</h6>
+                    <p className='lg:text-lg text-xs text-[#286eb4] rtl:text-right'>{t("2024 2025")}</p>
+                    <h6 className='lg:text-xl text-sm rtl:text-right rtl:font-IRANRounded'>{t("Freelance")}</h6>
                   </div>
                 </div>
                 <div className='grid gap-y-5 rtl:mr-5'>
                   <div className='mb-5'>
                     <h5 className='lg:text-2xl text-sm rtl:text-right rtl:font-IRANRounded'>{t("WordPress website")}</h5>
                     <hr className='my-2 text-current'></hr>
-                    <p className='lg:text-lg text-xs text-[#286eb4] rtl:text-right'>{t("2018 2020")}</p>
+                    <p className='lg:text-lg text-xs text-[#286eb4] rtl:text-right'>{t("2018 2022")}</p>
                     <h6 className='lg:text-xl text-sm rtl:text-right rtl:font-IRANRounded'>{t("Personal business")}</h6>
                   </div>
                   <div>
-                    <h5 className='lg:text-2xl text-sm rtl:text-right rtl:font-IRANRounded'>{t("Training Manager")}</h5>
+                    <h5 className='lg:text-2xl text-sm rtl:text-right rtl:font-IRANRounded'>{t("Front End Developer")}</h5>
                     <hr className='my-2 text-current w-1/2'></hr>
-                    <p className='lg:text-lg text-xs text-[#286eb4] rtl:text-right'>{t("2007 2010")}</p>
-                    <h6 className='lg:text-xl text-sm rtl:text-right rtl:font-IRANRounded'>{t("Ishraq School of Zanjan")}</h6>
+                    <p className='lg:text-lg text-xs text-[#286eb4] rtl:text-right'>{t("2025 now")}</p>
+                    <h6 className='lg:text-xl text-sm rtl:text-right rtl:font-IRANRounded'>{t("FasaGostar Tehran")}</h6>
                   </div>
                 </div>
               </div>

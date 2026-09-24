@@ -1,5 +1,3 @@
-"use client";
-
 import React from 'react';
 import { useTranslation } from 'next-i18next';
 
@@ -50,27 +48,34 @@ function Services() {
   ];
 
   return (
-    <div className="flex justify-center w-11/12 lg:w-2/3 mx-auto mb-10">
+    <section className="flex justify-center w-11/12 lg:w-2/3 mx-auto mb-10">
       <div className="w-full">
         <div className="text-center mb-10">
-          <h1 className="text-3xl sm:text-5xl font-bold text-gray-900 dark:text-white">{t("My Services")}</h1>
+          <h2 className="text-3xl sm:text-5xl font-bold text-gray-900 dark:text-white rtl:font-IRANRounded">
+            {t("My Services")}
+          </h2>
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
           {services.map((service, index) => (
             <div
               key={index}
-              className="p-6 sm:p-8 bg-white dark:bg-gray-800 rounded-lg shadow hover:shadow-lg transition-shadow flex flex-col sm:flex-row items-center"
+              className="p-6 sm:p-8 bg-white dark:bg-gray-800 rounded-2xl shadow hover:shadow-lg transition-all duration-300 flex flex-col sm:flex-row items-center sm:items-start rtl:space-x-reverse"
             >
-              <div className="flex items-center justify-center w-12 h-12 sm:w-16 sm:h-16 rounded-full bg-[#eca348] mb-4 sm:mb-0 sm:mr-6 rtl:sm:ml-6">
+              {/* آیکون */}
+              <div className="flex-shrink-0 flex items-center justify-center w-12 h-12 sm:w-16 sm:h-16 rounded-2xl bg-[#eca348] text-white mb-4 sm:mb-0 sm:ltr:mr-6 sm:rtl:ml-6">
                 {service.icon}
               </div>
-              <div className="text-center sm:text-left">
-                <h2 className="mb-2 text-xl sm:text-2xl font-bold tracking-normal break-words text-gray-900 dark:text-white">
+
+              {/* متن‌ها */}
+              <div className="text-center sm:ltr:text-left sm:rtl:text-right flex-1">
+                <h3 className="mb-2 text-xl sm:text-2xl font-bold tracking-normal break-words text-gray-900 dark:text-white rtl:font-IRANRounded">
                   {t(service.title)}
-                </h2>
-                <span className="text-[#286eb4] text-lg sm:text-xl">{t(service.price)}</span>
-                <p className="text-gray-700 dark:text-gray-300 mt-2 text-sm sm:text-base tracking-normal break-words whitespace-normal">
+                </h3>
+                {/*<span className="inline-block text-[#286eb4] dark:text-[#52a5ff] font-semibold text-lg sm:text-xl mb-2">
+                  {t(service.price)}
+                </span>*/}
+                <p className="text-gray-600 dark:text-gray-300 text-sm sm:text-base leading-relaxed break-words whitespace-normal text-justify sm:rtl:text-right sm:ltr:text-left">
                   {t(service.description)}
                 </p>
               </div>
@@ -78,7 +83,7 @@ function Services() {
           ))}
         </div>
       </div>
-    </div>
+    </section>
   );
 }
 
