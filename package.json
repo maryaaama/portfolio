@@ -15,7 +15,7 @@
     "autoprefixer": "^10.4.20",
     "aws-sdk": "^2.1692.0",
     "i18next": "^24.0.2",
-    "next": "^15.0.4-canary.46",
+    "next": "15.6.0-canary.60",
     "next-i18next": "^15.4.0",
     "postcss": "^8.4.49",
     "react": "^18",
