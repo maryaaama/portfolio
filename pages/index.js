@@ -5,21 +5,21 @@ import React, { useState, useEffect } from 'react';
 import { useRouter } from "next/router";
 import Head from "next/head";
 import Image from "next/image";
-import LanguageSwitcher from "./components/LanguageSwitcher";
+import LanguageSwitcher from "../components/LanguageSwitcher";
 import { Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/react';
-import ProgressBar from './components/ProgressBar.js';
+import ProgressBar from '../components/ProgressBar';
 import db from '/data/db.json';
 import { useTranslation } from 'next-i18next';
-import ThemeToggle from './components/ThemeToggle';
+import ThemeToggle from '../components/ThemeToggle';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Pagination } from 'swiper/modules';
 import "swiper/css";
 import "swiper/css/navigation";
 import styles from "/styles/Slider.module.css";
-import ProjectVideoGallery from "./components/ProjectVideoGallery"
-import Services from './components/services';
-import Project from "./components/project";
+import ProjectVideoGallery from "../components/ProjectVideoGallery"
+import Services from '../components/services';
+import Project from "../components/project";
 
 export async function getStaticProps({ locale }) {
   return {
